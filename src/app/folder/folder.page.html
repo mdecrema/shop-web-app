@@ -1,21 +1,220 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" #content (ionScroll)="onScroll($event)" [scrollEvents]="true">
+  
+  <ion-grid>
+   
+    <app-navbar
+    [collapse]="collapse"
+    ></app-navbar>
+    <ion-row style="height: 100vh; background-color:#1C8C82; background: linear-gradient(to bottom, #1C8C82, #0d5952);">
+        <div style="width: 100vw; height: 400px; border: 1px solid; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
   </div>
+    </ion-row>
+
+    <ion-row style="height: auto; margin: 100px 0;">
+        <ion-col size="10" offset="1" style="padding: 10px 0; position: relative;">
+          <div>
+            <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'our_approach' | translate}}</p>
+          </div>   
+          <div style="display: flex; flex-direction: row; justify-content: space-between;"> 
+            
+            <div style="width: 45%; float: left;">
+              <p style=" font-size: 50px">
+Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span style="color: #1C8B81;">ecologiche</span>
+            </p>
+            </div>
+            <div style="width: 45%; float: left;">
+              <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
+              <p style="font-size: 20px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+              Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
+
+            </p>
+            </div>
+          </div>
+      </ion-col>
+
+<!-- MENU PRODOTTI -->
+<!-- <ion-col size="2" offset="1" class="menu-col  glossy-box">
+  <div class="list-grid">
+    @for (item of productList; track item; let i = $index) {
+      <ion-item class="list-btn" (click)="scrollToElement(item.name)">
+        <ion-label style="color: #0d5952; font-size: 16px; font-weight: bold;">LiLo {{ (item.name).toUpperCase() }}</ion-label>
+        <ion-icon name="chevron-forward-outline" style="margin-left: -50px!important;" color="ion-dark"></ion-icon>
+      </ion-item>
+    }
+  </div>
+</ion-col> -->
+      </ion-row>
+
+      <ion-row style="height: auto">
+        <ion-col size="10" offset="1" style="display: flex; justify-content: space-between; flex-direction: row;">
+          <div class="card-container">
+            <div class="card-section first-card-img">
+              <!-- <img src="./assets/images/paint-2.jpg" alt="" style="background-image: url(./assets/images/paint-2.jpg);"> -->
+            </div>
+            <div class="card-section" style="padding: 30px 0;">
+              <span class="card-title">{{ 'discover_our_techno' | translate }}</span>
+              <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
+            </div>  
+          </div>
+          <div class="card-container">
+            <div class="card-section">
+              <img src="./assets/images/scientist-1.webp" alt="">
+            </div>
+            <div class="card-section" style="padding: 30px 0;">
+              <span class="card-title">{{ 'explore_our_science' | translate }}</span>
+              <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
+            </div>  
+          </div>
+          <div class="card-container">
+            <div class="card-section">
+              <img src="./assets/images/impact-1.jpg" alt="">
+            </div>
+            <div class="card-section" style="padding: 30px 0;">
+              <span class="card-title">{{ 'learn_about_our_impact' | translate }}</span>
+              <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
+            </div>  
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+    <!-- <ion-row style="height: auto; margin-bottom: 100px;">
+      <ion-col size="10" offset="1">
+    <swiper-container
+      slides-per-view="1"
+      loop="true"
+      autoplay-delay="6000"
+      autoplay-disable-on-interaction="false"
+      style="width:100%;height:400px;display:block;"
+    >
+      <swiper-slide>
+        <img src="assets/images/img-1.jpg" alt="Slide 1" style="width:100%;height:100%;object-fit:cover;" style="width: 100%; height: 100%;" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/images/bg-2.png" alt="Slide 2" style="width:100%;height:100%;object-fit:cover;" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/images/bg-3.png" alt="Slide 3" style="width:100%;height:100%;object-fit:cover;" />
+      </swiper-slide>
+    </swiper-container>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row style="height: auto; margin-bottom: 100px;">
+      <ion-col size="10" offset="1" style="padding: 10px 0; position: relative;">
+          <div style="width: 100%;">
+            <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'science_innovation' | translate}}</p>
+          </div>   
+          <div style="display: flex; flex-direction: row; justify-content: space-between;"> 
+            <div style="width: 45%">
+              <p style="font-size: 50px">
+  Polimeri <span style="color: #1C8B81;">non-terrestri</span>
+              </p>
+            </div>
+            <div style="width: 45%">
+              <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
+              <p style="font-size: 20px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+                Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego.
+              </p>
+            </div>
+          </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="height: auto;">
+      <ion-col size="10" offset="1">
+          <ion-label style="font-size: 30px; font-weight: bold; font-family: NotoSans, sans-serif;">LE NOSTRE SOLUZIONI</ion-label>
+      </ion-col>
+      
+      <!-- SPECCHIETTO DATI -->
+      <ion-col size="10" offset="1" style="margin-bottom: 70px;">
+        <div class="stats-container">
+          <div class="stats-large-box">
+            <div style="width: 50%; height: 100%; float: left; border: 1px solid; overflow: hidden;">
+              <img src="./assets/images/pittura-1.jpeg" alt="" style="width: 100%; height: 100%;">
+            </div>
+            <div style="width: 50%; height: 100%; float: left; border: 1px solid; padding: 30px; font-family: RobotoBold, sans-serif;">
+              <span style="color: text-first; text-transform: uppercase;">{{ 'science' | translate}}</span>
+            </div>
+          </div>
+          <div class="stats-small-box bg-dark">
+            <span style="text-transform: uppercase;">{{ 'natural' | translate }}</span>
+            <br>
+            <span style="font-size: 80px; font-family: NotoSans, sans-serif;">100</span><span style="font-size: 40px;">%</span>
+          </div>
+          <div class="stats-small-box bg-green">
+            <span style="text-transform: uppercase;">{{ 'impact' | translate }}</span>
+            <br>
+             <span style="font-size: 80px; font-family: NotoSans, sans-serif;">~50</span><span style="font-size: 40px;">%</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+      <!-- aqua #68F6DB -->
+
+      <!-- Products Swiper -->
+        <ion-row style="height: auto; margin-bottom: 100px;">
+      <!-- INTRODUZIONE -->
+      <ion-col size="10" offset="1">
+    <swiper-container
+      slides-per-view="1.6"
+centered-slides="true"
+space-between="10"
+initial-slide="2"
+      loop="true"
+      style="width:100%; height: 600px; display:block;"
+    >
+    @for (item of productList; track item; let i = $index) {
+      <swiper-slide>
+      <div [id]="item.name" size="3" class="product-card-box">
+        <div  #productCard class="product-card">
+          <div style="width: 100%; height: 60%; overflow: hidden; text-align: center; position: relative;">
+            <div style="position: absolute; top: 0; left:0; width: 100%; height: 50px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(4px); line-height: 50px; padding-left: 30px;">
+<div style="width: 100%; min-height: 70px;">
+            <div style="width: 100px; height: 50px; float: left;">
+              <img src="./assets/logo/main-logo.png" alt="" style="width: 100%; height: 100%;">
+            </div>
+            <div style="float: left;">
+              <span style="font-size: 26px; text-transform: uppercase; font-weight: bold; color: #FFF; margin-left: -10px; text-shadow: 1px 2px 5px grey;">{{ item.name }}</span>
+            </div>
+          </div>
+            </div>
+            <img src="./assets/images/paint-3.jpg" alt="" style="width: 100%; height: 100%;">
+          </div>
+          <div style="width: 100%; height: 40%; float:left; padding-left: 30px;" class="product-card-text">
+            <p style="font-size: 24px; font-weight: bold; font-family: NotoSans, sans-serif;">
+              {{item.mainDescription}}
+            </p>
+            <ion-button fill="clear" style="margin-top: 20px;" (click)="navigateToRoute(item.id)">
+              <ion-label style="font-size: 16px; color: #0d5952;">{{ 'learn_more' | translate }}</ion-label>
+              <ion-icon slot="end" name="chevron-forward-outline" style="color: #0d5952;"></ion-icon>
+            </ion-button>
+          </div>
+          
+          <!-- <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-around;">
+              <div class="bg-dark" style="font-family:Impact, Haettenschweiler, 'Arial Narrow', sans-serif; width: 150px; height: 50px; color: #FFF; text-transform: uppercase; border-radius: 6px; text-align: center; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                <span>vegan & natural</span>
+              </div>
+              <div style="width: 150px; height: 50px; background-color: #1C8C82; color: #FFF; text-transform: uppercase; font-weight: bold; border-radius: 6px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                <span>plastic free</span>
+              </div>
+              <div style="width: 150px; height: 50px; background-color: #1C8C82; color: #FFF; text-transform: uppercase; font-weight: bold; border-radius: 6px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                <span>biodegradable</span>
+              </div>
+              <div style="width: 150px; height: 50px; background-color: #1C8C82; color: #FFF; text-transform: uppercase; font-weight: bold; border-radius: 6px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                <span>edible</span>
+              </div>
+          </div> -->
+        </div>
+      </div>
+    </swiper-slide>
+    }
+    </swiper-container>
+      </ion-col>
+    </ion-row>
+
+    <app-footer></app-footer>
+
+  </ion-grid>
 </ion-content>
+

@@ -25,6 +25,8 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import "swiper/css";
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -35,3 +37,115 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+@font-face {
+    font-family: 'RobotoCustom';
+    /* Choose a name for your font */
+    src: url('src/assets/fonts/Roboto/static/Roboto-regular.ttf') format('truetype');
+    /* Adjust path and format */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoBold';
+    /* Choose a name for your font */
+    src: url('src/assets/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf') format('truetype');
+    /* Adjust path and format */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSerif';
+    src: url('/assets/fonts/Noto_Serif/static/NotoSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('/assets/fonts/Noto_Sans/static/NotoSans_Condensed-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSansBold';
+    src: url('/assets/fonts/Noto_Sans/static/NotoSans_Condensed-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HindVadodara';
+    src: url('/assets/fonts/Hind_Vadodara/HindVadodara-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --ion-font-family: 'NotoSans', sans-serif;
+}
+
+html,
+body,
+ion-app {
+    font-family: var(--ion-font-family) !important;
+}
+
+// Colors Palette
+// Ocra : #CE8404;
+// Mango : 
+
+// Shades Of Main Palette Colors
+// Dark : #004958
+// Mid-dark : #23545B;
+// Grey : #4B6A72;
+// First : #006D70
+// Second : #009899
+// Third : #39A7C2
+// Fourth : #B3FFFF
+// Fifth : #CDFFFE
+// Light : #F1FFFF
+
+.bg-dark {
+    background-color: #004958;
+}
+
+.bg-green {
+    background-color: #1C8C82;
+}
+
+.text-mid-dark {
+    color: #23545B;
+}
+
+.text-grey {
+    color: #4B6A72;
+}
+
+.text-first {
+    color: #006D70;
+}
+
+.text-second {
+    color: #009899;
+}
+
+.text-third {
+    color: #39A7C2;
+}
+
+.text-fourth {
+    color: #B3FFFF;
+}
+
+.text-fifth {
+    color: #CDFFFE;
+}
+
+.text-light {
+    color: #F1FFFF;
+}

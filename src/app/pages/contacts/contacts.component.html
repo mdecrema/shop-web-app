@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true" #content >
+  <ion-grid>
+      <app-navbar
+        [collapse]="true"
+      ></app-navbar>
+
+
+      <ion-row>
+        <ion-col size="10" offset="1" style="margin-top: 100px;">
+          <span style="font-size: 50px;">{{ 'contacts' | translate }}</span>
+          <p style="line-height: 30px;">
+            Tel: +41 61 324 11 11
+            (Switzerland)
+            <br>
+            Monday - Friday
+            8:30 a.m. - 5:00 p.m. GMT+1
+            <br>
+            Mail: xxxxxx@xxxx.com
+          </p>
+        </ion-col>
+      </ion-row>
+
+
+      <app-footer></app-footer>
+  </ion-grid>  
+</ion-content>

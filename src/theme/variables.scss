@@ -1,2 +1,404 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+.main-background-image {
+    width: 100vw;
+    height: 800px;
+    background: url(../assets/images/img-1.jpg) 0 0/100% 100% no-repeat;
+    // background: url(../assets/images/bg-4.png) 0 0/100% 100% no-repeat;
+}
+
+.background-image {
+    width: 100vw;
+    height: 100%;
+    background: url(../assets/images/bg-21.png) 0 0/100% 100% no-repeat;
+    // background: url(../assets/images/bg-4.png) 0 0/100% 100% no-repeat;
+}
+
+.background-image-reverse {
+    width: 100vw;
+    height: 100%;
+    background: url(../assets/images/bg-20.png) 0 0/100% 100% no-repeat;
+}
+
+ion-item {
+    // background: transparent !important;
+}
+
+.text-box-op {}
+
+.text-box {}
+
+.glossy-box {
+    background: rgba(255, 255, 255, 0.6);
+    /* white with transparency */
+    backdrop-filter: blur(4px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(4px);
+    /* Safari support */
+    border-radius: 10px;
+    // padding: 2rem;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    // color: #000;
+    /* text stays sharp */
+    // text-align: center;
+}
+
+.logo {
+    font-size: 2rem;
+    color: white;
+}
+
+.logo .brand {
+    font-family: 'Arvo', serif;
+    /* slab serif */
+    position: relative;
+    padding-bottom: 0.2em;
+}
+
+.logo .brand::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.25em;
+    background: white;
+    border-radius: 4px;
+    /* makes it rounded underline */
+}
+
+.logo .tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 0.3em;
+    color: #3D998E
+}
+
+.product-card-box {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    margin: 50px 0;
+    border-radius: 0px;
+    //background: url(../assets/images/trama_chimica_1.png); // #B0C3BF;
+    background-color: #D5F5F1;
+    background-size: cover;
+
+    position: relative;
+
+    // transition: background 0.35s ease, color 0.35s ease, transform 0.35s;
+
+    // &.active {
+    //     background: teal;
+    //     color: #fff;
+    //     transform: translateY(-4px);
+    // }
+}
+
+.product-card {
+    width: 100%;
+    height: 30%;
+    padding: 20px;
+    // border: 1px solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // background-color: #FFF;
+    border-radius: 0px;
+
+    // Glossy effects
+    background: rgba(255, 255, 255, 0.6);
+    /* white with transparency */
+    backdrop-filter: blur(2px);
+    /* blur background behind */
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.product-card.open {
+    animation: openAnimation 0.5s ease forwards; // <- forwards keeps 100% width
+}
+
+.product-card-text {
+    color: #000;
+}
+
+.product-card.close {
+    animation: closeAnimation 0.3s ease forwards;
+}
+
+@keyframes openAnimation {
+    0% {
+        height: 30%;
+    }
+
+    100% {
+        height: 98%;
+    }
+}
+
+@keyframes closeAnimation {
+    0% {
+        height: 98%;
+    }
+
+    100% {
+        height: 30%;
+    }
+}
+
+// @keyframes fadeInAnimation {
+//     0% {
+//         visibility: hidden;
+//     }
+
+//     100% {
+//         visibility: visible;
+//     }
+// }
+
+
+// .product-card {
+//     transition: background 0.35s ease, color 0.35s ease, transform 0.35s;
+//     background: #fff;
+//     color: #222;
+//     padding: 16px;
+//     margin: 12px 0;
+//     min-height: 140px;
+//     /* make sure cards have height so intersection is detected */
+//     display: block;
+//     border-radius: 8px;
+//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+//     &.active {
+//         background: teal;
+//         color: #fff;
+//         transform: translateY(-4px);
+//     }
+// }
+
+// .list-btn {
+//     // width: 100%;
+//     // border: 1px #fff;
+//     // border-radius: 6px;
+//     font-size: 30px;
+//     display: flex;
+//     flex-direction: column;
+//     /* stack vertically */
+//     // margin: 20px 0;
+//     // --background: transparent;
+//     // --color: #3D998E;
+//     // font-weight: bold;
+//     // font-family: 'NotoSerif', serif;
+// }
+
+ion-content,
+ion-grid,
+ion-row,
+ion-col.menu-col {
+    height: 100%;
+}
+
+.list-grid {
+    display: grid;
+    height: 100%;
+    grid-auto-rows: 1fr;
+    padding: none;
+}
+
+.list-btn {
+    height: 100%;
+    --min-height: 0;
+    --padding-start: 40px;
+    --inner-padding-end: 0;
+    --inner-padding-top: 0;
+    --inner-padding-bottom: 0;
+    --inner-border-width: 0 !important;
+    --border-radius: 6px !important;
+    --border-width: 0 !important;
+    margin: 0;
+    --button-height: 100% !important;
+
+    --background: transparent !important;
+    --border: none !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+
+    ion-label {
+        color: #3D998E;
+        font-size: 30px;
+    }
+}
+
+.list-btn:hover {
+    background-color: #3D998E !important;
+
+}
+
+.list-btn:hover>ion-label {
+    color: #FFF !important;
+
+}
+
+.video-box {
+    width: 100%;
+    height: 100%;
+
+}
+
+.top-navbar-line {
+    height: 20px;
+    padding: none !important;
+    margin: none !important;
+}
+
+.navbar-container {
+    width: 100vw;
+    height: auto;
+    background-color: transparent;
+}
+
+.navbar-logo {
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+
+.navbar-routes-container {
+    height: 100px;
+    float: left;
+}
+
+.navbar-route-button {
+    height: 100%;
+    text-transform: uppercase;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.navbar-route-button-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+}
+
+.navbar-right-content-wrapper {
+    height: 100px;
+    float: right;
+}
+
+.navbar-right-content {
+    height: 100%;
+    text-transform: uppercase;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.navbar-right-content-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.navbar-container.collapsed {
+    background: rgba(26, 136, 126, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.navbar-logo.collapsed {
+    width: 100px;
+    height: 50px;
+}
+
+.navbar-routes-container.collapsed {
+    height: 50px;
+}
+
+.navbar-right-content-wrapper.collapsed {
+    height: 50px;
+}
+
+.stats-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stats-large-box {
+    width: 47%;
+    height: 100%;
+    background-color: #FFF;
+}
+
+.stats-small-box {
+    width: 24%;
+    height: 100%;
+    padding: 30px;
+    color: #FFF;
+    font-family: RobotoBold, sans-serif;
+}
+
+.stats-large-box:hover {
+    animation: zoomAnimation 0.1s ease forwards;
+}
+
+.stats-small-box:hover {
+    animation: zoomAnimation 0.1s ease forwards;
+}
+
+.card-container {
+    width: calc(100% / 3.2);
+    height: 400px;
+    cursor: pointer;
+}
+
+.card-container:hover {
+    animation: zoomAnimation 0.1s ease forwards;
+}
+
+@keyframes zoomAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.card-section {
+    width: 100%;
+    height: 50%;
+    overflow: hidden
+}
+
+.card-title {
+    font-size: 22px;
+    color: #0d5952;
+    font-family: NotoSansBold, sans-serif;
+}
+
+.card-description {
+    font-size: 16px;
+    font-family: RobotoCustom, sans-serif;
+}
+
+.first-card-img {
+    background: url(../assets/images/paint-2.jpg) 0 0/100% 100% no-repeat;
+}
