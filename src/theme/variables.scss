@@ -17,7 +17,7 @@
 .background-image-reverse {
     width: 100vw;
     height: 100%;
-    background: url(../assets/images/bg-4.png) 0 0/100% 100% no-repeat;
+    background: url(../assets/images/bg-00.png) 0 0/100% 100% no-repeat;
 }
 
 ion-item {
@@ -257,7 +257,11 @@ ion-col.menu-col {
 .navbar-container {
     width: 100vw;
     height: auto;
-    background-color: transparent;
+    // background-color: transparent;
+    // background: rgba(26, 136, 126, 0.6);
+    background: linear-gradient(to bottom, rgba(26, 136, 126, 0.6), transparent);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 .navbar-logo {
