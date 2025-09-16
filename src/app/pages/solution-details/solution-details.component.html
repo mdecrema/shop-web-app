@@ -5,13 +5,33 @@
       ></app-navbar>
 
 
-      <ion-row>
+      <ion-row style="height: auto;">
         <ion-col size="10" offset="1" style="margin-top: 100px;">
           <span style="font-size: 50px;">{{ solution?.name }}</span>
-          
         </ion-col>
       </ion-row>
+@switch (solution?.name) {
+  @case ('Pack') {
+    
+      <ion-row class="background-image" style="height: auto; margin-top: 70px;">
+          <ion-col size="10" offset="1" style="text-align: center; font-size: 32px; font-family: RobotoBold, sans-serif; margin-top: 70px;">
+            <span>{{ 'long_live_food' | translate}}</span>
+          </ion-col>
+      </ion-row>
 
+      <ion-row style="height: auto; margin-top: 70px;">
+        <ion-col>
+          <span>{{ 'compare' | translate}}</span>
+        </ion-col>
+      </ion-row>
+  }
+  @case ('Paint') {
+    Case B.
+  }
+  @default {
+    Default case.
+  }
+}
 
       <app-footer></app-footer>
   </ion-grid>  

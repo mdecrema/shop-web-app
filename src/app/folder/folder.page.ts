@@ -167,8 +167,12 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
     });
   }
 
-  public navigateToRoute(solutionId: number) {
-    this._router.navigate(['/solutions', solutionId])
+  public navigateToSolution(solutionId: number) {
+    return this._router.navigate(['/solutions', solutionId])
+  }
+
+  public navigateToRoute(route: string) {
+    return this._router.navigate([route])
   }
 
 }

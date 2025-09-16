@@ -1,0 +1,14 @@
+.list-item {
+    padding: 10px 20px;
+    margin: 15px 0;
+    cursor: pointer;
+    font-family: RobotoBold, sans-serif;
+}
+
+.list-item:hover {
+    border-left: 6px solid lightgray;
+}
+
+.list-item.active {
+    border-left: 6px solid #1C8C82;
+}

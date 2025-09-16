@@ -5,7 +5,7 @@
     <app-navbar
     [collapse]="collapse"
     ></app-navbar>
-    <ion-row style="height: 100vh; background-color:#1C8C82; background: linear-gradient(to bottom, #1C8C82, #0d5952);">
+    <ion-row class="background-image-reverse" style="height: 100vh;">
         <div style="width: 100vw; height: 400px; border: 1px solid; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
   </div>
     </ion-row>
@@ -24,7 +24,7 @@ Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span sty
             </div>
             <div style="width: 45%; float: left;">
               <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
-              <p style="font-size: 20px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+              <p style="font-size: 18px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
               Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
 
             </p>
@@ -47,7 +47,7 @@ Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span sty
 
       <ion-row style="height: auto">
         <ion-col size="10" offset="1" style="display: flex; justify-content: space-between; flex-direction: row;">
-          <div class="card-container">
+          <div class="card-container" (click)="navigateToRoute('/innovation')">
             <div class="card-section first-card-img">
               <!-- <img src="./assets/images/paint-2.jpg" alt="" style="background-image: url(./assets/images/paint-2.jpg);"> -->
             </div>
@@ -56,7 +56,7 @@ Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span sty
               <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
             </div>  
           </div>
-          <div class="card-container">
+          <div class="card-container" (click)="navigateToRoute('/innovation')">
             <div class="card-section">
               <img src="./assets/images/scientist-1.webp" alt="">
             </div>
@@ -65,7 +65,7 @@ Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span sty
               <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
             </div>  
           </div>
-          <div class="card-container">
+          <div class="card-container" (click)="navigateToRoute('/innovation')">
             <div class="card-section">
               <img src="./assets/images/impact-1.jpg" alt="">
             </div>
@@ -108,12 +108,12 @@ Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span sty
           <div style="display: flex; flex-direction: row; justify-content: space-between;"> 
             <div style="width: 45%">
               <p style="font-size: 50px">
-  Polimeri <span style="color: #1C8B81;">non-terrestri</span>
+                Polimeri <span style="color: #1C8B81;">non-terrestri</span>
               </p>
             </div>
             <div style="width: 45%">
               <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
-              <p style="font-size: 20px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+              <p style="font-size: 18px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
                 Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego.
               </p>
             </div>
@@ -185,7 +185,7 @@ initial-slide="2"
             <p style="font-size: 24px; font-weight: bold; font-family: NotoSans, sans-serif;">
               {{item.mainDescription}}
             </p>
-            <ion-button fill="clear" style="margin-top: 20px;" (click)="navigateToRoute(item.id)">
+            <ion-button fill="clear" style="margin-top: 20px;" (click)="navigateToSolution(item.id)">
               <ion-label style="font-size: 16px; color: #0d5952;">{{ 'learn_more' | translate }}</ion-label>
               <ion-icon slot="end" name="chevron-forward-outline" style="color: #0d5952;"></ion-icon>
             </ion-button>

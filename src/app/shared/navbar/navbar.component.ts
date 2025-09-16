@@ -54,8 +54,8 @@ export class NavbarComponent  implements OnInit {
       },
       {
         id: 1,
-        i18n: 'services',
-        route: '/services'
+        i18n: 'innovation',
+        route: '/innovation'
       },
       {
         id: 0,

@@ -1,0 +1,168 @@
+<ion-content [fullscreen]="true" #content >
+  <ion-grid>
+      <app-navbar
+        [collapse]="true"
+      ></app-navbar>
+
+
+      <ion-row style="height: auto;">
+        <ion-col size="10" offset="1" style="margin-top: 100px;">
+          <span style="font-size: 50px;">{{ 'innovation' | translate }}</span>
+          <!-- <p style="font-size: 20px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p> -->
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="height: auto; margin-top: 70px;">
+        <ion-col size="10" offset="1" style="height: 350px; display: flex; flex-direction: row;">
+          <div style="width: 80%; height: 100%; padding-right: 30px; display: flex; flex-direction: column; justify-content: center;">
+            <div>
+            <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'our_approach' | translate}}</p>
+            <span style=" font-size: 32px;">{{ 'Focus' | translate}}</span>
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.5; margin-top: 20px;">
+                Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
+              <br>
+              <br>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+            </p>
+          </div> 
+          </div>
+          <div style="width: 20%; height: 90%; overflow: hidden; text-align: right;">
+            <img src="./assets/images/seaweed-8.png" alt="" style="transform: scale(0.9);">
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="height: auto; background: linear-gradient(to bottom, #F0EFEA, #fff); margin-top: 70px;">
+        <ion-col size="10" offset="1" style="text-align: center; font-size: 38px; font-family: RobotoBold, sans-serif; margin-top: 70px;">
+          <span class="text-main-green">POLIMERI NON-TERRESTRI</span>
+        </ion-col>
+
+        <ion-col size="6" offset="3" style="text-align: center; font-family: RobotoCustom, sans-serif; font-size: 18px; line-height: 1.5; margin-top: 20px;">
+          Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego. 
+        </ion-col>
+
+        <ion-col size="10" offset="1" style="min-height: 400px; margin-top: 50px;">
+          <ion-row>
+            <!-- Left Box -->
+            <ion-col size="4" style="display: flex; flex-direction: column; justify-content: center;">
+              <div style="padding: 0 30px;">
+                @for (feature of featureList; track feature; let i = $index) {
+                <div class="list-item" [class]="{'active': feature.active, 'text-main-green': feature.active}" (click)="setFeatureActive(feature.id)">
+                  <span>{{ feature.title | translate }}</span>
+                </div>
+                }
+              </div>
+            </ion-col>
+            <!-- Center Box -->
+            <ion-col size="4" style="padding: 20px; overflow: hidden;">
+              <img [src]="getFeatureActiveImage()" alt="" style="width: 100%; height: 100%;">
+            </ion-col>
+            <!-- Right Box -->
+            <ion-col size="4" style="display: flex; flex-direction: column; justify-content: center;">
+              <div style="padding: 0 30px;">  
+                <div style="padding: 20px;">
+                  <span style="font-size: 30px;">{{ getFeatureActiveTitle() | translate }}</span>
+                  <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 30px;">{{ getFeatureActiveDescription() | translate}}</p>
+                  <ion-button fill="clear" class="btn-custom" (click)="navigateToRoute('/solutions')">
+                    <ion-label class="text-main-green">Le nostre soluzioni</ion-label>
+                    <ion-icon slot="end" name="chevron-forward-outline" class="text-main-green"></ion-icon>
+                  </ion-button>
+                </div>    
+              </div>
+            </ion-col>
+            </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="background-image" style="height: auto; margin-top: 100px;">
+        <ion-col size="10" offset="1" style="padding: 50px;">
+          <!-- Icons -->
+          <div style="display: flex; flex-direction: row; justify-content: space-around;">
+              <div style="width: 80px; height: 80px; background-color: #fff; box-shadow: 2px 2px 10px gray; border: 4px solid #1C8C82; color: #1C8C82; border-radius: 100%; margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <ion-icon name="leaf-outline" style="font-size: 50px;"></ion-icon>
+              </div>
+            <div style="width: 80px; height: 80px;  background-color: #fff; box-shadow: 2px 2px 10px gray; border: 4px solid #1C8C82; color: #1C8C82; border-radius: 100%; margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <ion-icon name="trending-up-outline" style="font-size: 50px;"></ion-icon>
+            </div>
+            <div style="width: 80px; height: 80px;  background-color: #fff; box-shadow: 2px 2px 10px gray; border: 4px solid #1C8C82; color: #1C8C82; border-radius: 100%; margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <ion-icon name="flask-outline" style="font-size: 50px;"></ion-icon>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: row; justify-content: space-around; margin-top: 20px;">
+              <div style="width: 30%; text-align: center;">
+                <span style="font-size: 20px; text-transform: uppercase; color: #1C8C82">Ecocompatibile</span>
+                <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; text-align: justify;">
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+              </div>
+            <div style="width: 30%; text-align: center;">
+                <span style="font-size: 20px; text-transform: uppercase; color: #1C8C82">Duraturo</span>
+                <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; text-align: justify;">
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+              </div>
+            <div style="width: 30%; text-align: center;">
+                <span style="font-size: 20px; text-transform: uppercase; color: #1C8C82">Biodegradabile</span>
+                <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; text-align: justify;">
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+              </div>
+          </div>
+          <!-- Descriptions -->
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row style="height: auto;">
+        <ion-col size="5" offset="1">
+          <div style="width: 100%; height: 400px;">
+            <img src="./assets/images/seaweed-8.png" alt="">
+          </div>
+        </ion-col>
+        <ion-col size="5">
+          <div  style="width: 100%; height: 400px;">
+           
+          </div>
+        </ion-col>
+      </ion-row> -->
+
+      <ion-row style="height: auto; margin-top: 70px;">
+        <ion-col size="10" offset="1" style="height: 400px; display: flex; flex-direction: row;">
+          <div style="width: 20%; height: 100%; overflow: hidden; text-align: right;">
+            <img src="./assets/images/seaweed-9.png" alt="" style="width: 100%; height: 100%;">
+          </div>
+          <div style="width: 80%; height: 100%; padding-left: 30px; display: flex; flex-direction: column; justify-content: center;">
+            <div>
+            <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'our_approach' | translate}}</p>
+            <span style=" font-size: 32px;">{{ 'Focus' | translate}}</span>
+            <p style="font-family: RobotoCustom, sans-serif; font-size: 18px; line-height: 1.5; margin-top: 20px;">
+                Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
+              <br>
+              <br>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+            </p>
+          </div> 
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="height: auto;">
+        <ion-col size="5" offset="1">
+          <div style="width: 100%; height: 400px;">
+
+          </div>
+        </ion-col>
+        <ion-col size="5">
+          <div  style="width: 100%; height: 400px;">
+           
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <app-footer></app-footer>
+  </ion-grid>  
+</ion-content>

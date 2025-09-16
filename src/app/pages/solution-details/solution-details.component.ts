@@ -5,12 +5,13 @@ import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 import { IProduct } from 'src/app/models/product.model';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { NgSwitch, NgSwitchCase } from '@angular/common';
 
 @Component({
   selector: 'app-solution-details',
   templateUrl: './solution-details.component.html',
   styleUrls: ['./solution-details.component.scss'],
-  imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective]
+  imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, NgSwitch, NgSwitchCase, IonContent, TranslatePipe, TranslateDirective]
 })
 export class SolutionDetailsComponent  implements OnInit {
   private _activatedRoute = inject(ActivatedRoute);

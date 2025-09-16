@@ -41,7 +41,7 @@
 @font-face {
     font-family: 'RobotoCustom';
     /* Choose a name for your font */
-    src: url('src/assets/fonts/Roboto/static/Roboto-regular.ttf') format('truetype');
+    src: url('src/assets/fonts/Roboto/static/Roboto-Regular.ttf') format('truetype');
     /* Adjust path and format */
     font-weight: normal;
     font-style: normal;
@@ -128,6 +128,10 @@ ion-app {
 
 .text-first {
     color: #006D70;
+}
+
+.text-main-green {
+    color: #1C8C82;
 }
 
 .text-second {

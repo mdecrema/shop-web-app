@@ -2,6 +2,7 @@
     "home": "Home",
     "solutions": "Solutions",
     "services": "Services",
+    "innovation": "Innovation",
     "about_us": "About us",
     "contacts": "Contacts",
     "our_approach": "Our approach",
@@ -13,5 +14,11 @@
     "science": "Science",
     "natural": "Natural",
     "impact": "Impact",
-    "details": "Details"
+    "details": "Details",
+    "new_opportunity": "New opportunity",
+    "infinite_application": "Large applications",
+    "versatility": "Versatile",
+    "cheap": "Cheap",
+    "long_live_food": "Long live the food!",
+    "compare": "Compare"
 }

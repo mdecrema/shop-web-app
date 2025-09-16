@@ -17,7 +17,7 @@
 .background-image-reverse {
     width: 100vw;
     height: 100%;
-    background: url(../assets/images/bg-20.png) 0 0/100% 100% no-repeat;
+    background: url(../assets/images/bg-4.png) 0 0/100% 100% no-repeat;
 }
 
 ion-item {
@@ -292,6 +292,7 @@ ion-col.menu-col {
 .navbar-right-content-wrapper {
     height: 100px;
     float: right;
+    display: block;
 }
 
 .navbar-right-content {
@@ -313,6 +314,45 @@ ion-col.menu-col {
     cursor: pointer;
 }
 
+.navbar-hamburger-menu-wrapper {
+    height: 100px;
+    float: right;
+    display: none;
+}
+
+.navbar-hamburger-menu-content {
+    height: 100%;
+    text-transform: uppercase;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.navbar-hamburger-menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar-hamburger-menu-wrapper {
+        display: block;
+    }
+
+    .navbar-routes-container {
+        display: none;
+    }
+
+    .navbar-right-content-wrapper {
+        display: none;
+    }
+}
+
 .navbar-container.collapsed {
     background: rgba(26, 136, 126, 0.6);
     backdrop-filter: blur(4px);
@@ -329,6 +369,10 @@ ion-col.menu-col {
 }
 
 .navbar-right-content-wrapper.collapsed {
+    height: 50px;
+}
+
+.navbar-hamburger-menu-wrapper.collapsed {
     height: 50px;
 }
 
@@ -401,4 +445,8 @@ ion-col.menu-col {
 
 .first-card-img {
     background: url(../assets/images/paint-2.jpg) 0 0/100% 100% no-repeat;
+}
+
+.btn-custom {
+    --padding-start: none !important;
 }

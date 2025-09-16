@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail } from 'ionicons/icons';
+import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline } from 'ionicons/icons';
 import {
     TranslateService,
     TranslatePipe,
@@ -33,6 +33,6 @@ export class AppComponent {
     this.translate.addLangs(['it', 'de', 'en']);
         this.translate.setFallbackLang('it');
         this.translate.use('it');
-    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail });
+    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline });
   }
 }
