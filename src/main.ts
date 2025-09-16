@@ -11,7 +11,6 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 import { register as registerSwiperElements } from 'swiper/element/bundle';
-import 'swiper/css';
 
 registerSwiperElements();
 

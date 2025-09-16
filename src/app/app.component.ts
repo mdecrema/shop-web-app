@@ -10,6 +10,8 @@ import {
     TranslateDirective
 } from "@ngx-translate/core";
 import { FooterComponent } from './shared/footer/footer.component';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 @Component({
   selector: 'app-root',

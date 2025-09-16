@@ -41,7 +41,7 @@
 @font-face {
     font-family: 'RobotoCustom';
     /* Choose a name for your font */
-    src: url('src/assets/fonts/Roboto/static/Roboto-Regular.ttf') format('truetype');
+    src: url('/assets/fonts/Roboto/static/Roboto-Regular.ttf') format('truetype');
     /* Adjust path and format */
     font-weight: normal;
     font-style: normal;
@@ -50,7 +50,7 @@
 @font-face {
     font-family: 'RobotoBold';
     /* Choose a name for your font */
-    src: url('src/assets/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf') format('truetype');
+    src: url('/assets/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf') format('truetype');
     /* Adjust path and format */
     font-weight: normal;
     font-style: normal;
