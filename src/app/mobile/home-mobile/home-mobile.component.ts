@@ -1,24 +1,26 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonContent } from '@ionic/angular/standalone';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
+import { IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonContent, IonButton } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 import { IProduct } from 'src/app/models/product.model';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
-import { NgSwitch, NgSwitchCase } from '@angular/common';
+import { IFeature } from 'src/app/models/feature.model';
 import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-solution-details',
-  templateUrl: './solution-details.component.html',
-  styleUrls: ['./solution-details.component.scss'],
-  imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, NgSwitch, NgSwitchCase, IonContent, TranslatePipe, TranslateDirective]
+  selector: 'app-home-mobile',
+  templateUrl: './home-mobile.component.html',
+  styleUrls: ['./home-mobile.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
 })
-export class SolutionDetailsComponent  implements OnInit {
-  private _activatedRoute = inject(ActivatedRoute);
+export class HomeMobileComponent  implements OnInit {
+  private _router = inject(Router);
   public productList: IProduct[] = [];
-  public solution?: IProduct;
 
+  @ViewChild('content', { static: false }) content!: IonContent;
+  @ViewChildren('productCard', { read: ElementRef }) productCards!: QueryList<ElementRef<HTMLElement>>;
   constructor(
     private menuCtrl: MenuController
   ) { }
@@ -70,14 +72,14 @@ export class SolutionDetailsComponent  implements OnInit {
         description: 'Se hai un’idea che pensi possa essere interessante per  lo sviluppo di un nuovo prodotto aziendale o per migliorare quelli già esistenti, rivolgiti a noi! Siamo a tua disposizione per valutare le opzioni possibili e per supportarti nello sviluppo del prodotto piu’ adatto alle tue esigenze.'
       }
     ];
+  }
 
-    
-    const solutionId = Number(this._activatedRoute.snapshot.paramMap.get('id'));
+  public navigateToSolution(solutionId: number) {
+    return this._router.navigate(['/solutions', solutionId])
+  }
 
-    if (solutionId >= 0) {
-      this.solution = this.productList.find(item => item.id == solutionId);
-    }
-
+  public navigateToRoute(route: string) {
+    return this._router.navigate([route])
   }
 
 }

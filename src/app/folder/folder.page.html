@@ -1,3 +1,4 @@
+@if (!isMobile) {
 <ion-content [fullscreen]="true" #content (ionScroll)="onScroll($event)" [scrollEvents]="true">
   
   <ion-grid>
@@ -6,8 +7,8 @@
     [collapse]="collapse"
     ></app-navbar>
     <ion-row class="background-image-reverse" style="height: 100vh;">
-        <div style="width: 100vw; height: 400px; border: 1px solid; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
-  </div>
+      <div style="width: 100vw; height: 400px; border: 1px solid; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+      </div>
     </ion-row>
 
     <ion-row style="height: auto; margin: 100px 0;">
@@ -51,27 +52,27 @@ Offriamo soluzioni <span style="color: #1C8B81;">alternative</span> ed <span sty
             <div class="card-section first-card-img">
               <!-- <img src="./assets/images/paint-2.jpg" alt="" style="background-image: url(./assets/images/paint-2.jpg);"> -->
             </div>
-            <div class="card-section" style="padding: 30px 0;">
+            <div class="card-section" style="padding: 30px 0; text-align: center">
               <span class="card-title">{{ 'discover_our_techno' | translate }}</span>
-              <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
+              <!-- <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p> -->
             </div>  
           </div>
           <div class="card-container" (click)="navigateToRoute('/innovation')">
             <div class="card-section">
               <img src="./assets/images/scientist-1.webp" alt="">
             </div>
-            <div class="card-section" style="padding: 30px 0;">
-              <span class="card-title">{{ 'explore_our_science' | translate }}</span>
-              <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
+            <div class="card-section" style="padding: 30px 0; text-align: center">
+              <span class="card-title">{{ 'explore_branches' | translate }}</span>
+              <!-- <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p> -->
             </div>  
           </div>
           <div class="card-container" (click)="navigateToRoute('/innovation')">
             <div class="card-section">
               <img src="./assets/images/impact-1.jpg" alt="">
             </div>
-            <div class="card-section" style="padding: 30px 0;">
+            <div class="card-section" style="padding: 30px 0; text-align: center">
               <span class="card-title">{{ 'learn_about_our_impact' | translate }}</span>
-              <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p>
+              <!-- <p class="card-description">Lorem ipsum f fdffek f fakhfb haebf ahfb a</p> -->
             </div>  
           </div>
         </ion-col>
@@ -217,4 +218,8 @@ initial-slide="2"
 
   </ion-grid>
 </ion-content>
+}
 
+@if (isMobile) {
+<app-home-mobile></app-home-mobile>
+}

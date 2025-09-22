@@ -5,6 +5,7 @@ import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 import { IProduct } from 'src/app/models/product.model';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-solutions',
@@ -16,9 +17,12 @@ export class SolutionsComponent  implements OnInit {
   private _router = inject(Router);
   public productList: IProduct[] = [];
 
-  constructor() { }
+  constructor(
+    private menuCtrl: MenuController
+  ) { }
 
   ngOnInit() {
+    this.menuCtrl.close('main-menu');
     
     this.productList = [
       {

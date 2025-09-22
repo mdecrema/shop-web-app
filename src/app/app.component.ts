@@ -1,6 +1,7 @@
 
-import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline } from 'ionicons/icons';
@@ -10,6 +11,9 @@ import {
     TranslateDirective
 } from "@ngx-translate/core";
 import { FooterComponent } from './shared/footer/footer.component';
+import { IRoute } from './models/route.model';
+import { ILanguage } from './models/language.model';
+import { filter } from 'rxjs/operators';
 // import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
 
@@ -17,10 +21,13 @@ import { FooterComponent } from './shared/footer/footer.component';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [FooterComponent, RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterLink, IonRouterOutlet],
+  imports: [TranslatePipe, TranslateDirective, FooterComponent, RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterLink, IonRouterOutlet],
 })
-export class AppComponent {
-    private translate = inject(TranslateService);
+export class AppComponent implements OnInit {
+  private _router = inject(Router);
+  private translate = inject(TranslateService);
+  public routeList: IRoute[] = [];
+  public languagesAvailable: ILanguage[] = [];
   public appPages = [
     { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
     { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
@@ -31,10 +38,70 @@ export class AppComponent {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(
+    private menuCtrl: MenuController
   ) {
     this.translate.addLangs(['it', 'de', 'en']);
         this.translate.setFallbackLang('it');
         this.translate.use('it');
-    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline });
+    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline });  
+  
+      this.languagesAvailable = [
+      {
+        id: 0,
+        code: 'it',
+        description: 'Italiano'
+      },
+      {
+        id: 1,
+        code: 'en',
+        description: 'English'
+      },
+      {
+        id: 0,
+        code: 'de',
+        description: 'German'
+      }
+    ];
+
+    this.routeList = [
+      {
+        id: 0,
+        i18n: 'home',
+        route: '/'
+      },
+      {
+        id: 1,
+        i18n: 'solutions',
+        route: '/solutions'
+      },
+      {
+        id: 1,
+        i18n: 'innovation',
+        route: '/innovation'
+      },
+      {
+        id: 0,
+        i18n: 'about_us',
+        route: '/about-us'
+      },
+      {
+        id: 0,
+        i18n: 'contacts',
+        route: '/contacts'
+      }
+    ];
+  
+  }
+  ngOnInit(): void {
+    this._router.events.pipe(
+    filter((event: any): event is NavigationEnd => event instanceof NavigationEnd)
+).subscribe((event: NavigationEnd) => {
+    // A route change has occurred, now close the side menu
+    this.menuCtrl.close('main-menu');
+});
+  }
+
+  public navigateToRoute(route: IRoute) {
+    return this._router.navigate([route.route]);
   }
 }

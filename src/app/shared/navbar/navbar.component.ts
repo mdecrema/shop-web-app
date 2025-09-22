@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, Input, OnInit } from '@angular/core';
-import { IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
+import { IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption, IonMenuButton } from '@ionic/angular/standalone';
 import { ILanguage } from 'src/app/models/language.model';
 import { IRoute } from 'src/app/models/route.model';
 import {TranslateService, TranslatePipe, TranslateDirective} from "@ngx-translate/core";
@@ -9,7 +9,7 @@ import { Router, RouterLinkActive } from "@angular/router";
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  imports: [TranslatePipe, TranslateDirective, IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption, RouterLinkActive]
+  imports: [TranslatePipe, TranslateDirective, IonMenuButton, IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption, RouterLinkActive]
 })
 export class NavbarComponent  implements OnInit {
   private _router = inject(Router);

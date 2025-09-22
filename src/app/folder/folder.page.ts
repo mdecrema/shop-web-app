@@ -11,31 +11,43 @@ import {TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { Router, RouterLinkActive } from "@angular/router";
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { HomeMobileComponent } from '../mobile/home-mobile/home-mobile.component';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
   styleUrls: ['./folder.page.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [NavbarComponent, FooterComponent, TranslatePipe, TranslateDirective, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonGrid, IonRow, IonCard, IonCol, IonList, IonItem, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption],
+  imports: [NavbarComponent, FooterComponent, HomeMobileComponent, TranslatePipe, TranslateDirective, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonGrid, IonRow, IonCard, IonCol, IonList, IonItem, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption],
 })
 export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
   private _router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
+  private io?: IntersectionObserver;
+  private destroy$ = new Subject<void>();
 
   public collapse: boolean = false;
   public folder!: string;
   public productList: IProduct[] = [];
 
-
-   private io?: IntersectionObserver;
-  private destroy$ = new Subject<void>();
+  public isMobile: boolean = false;
 
   // @ViewChild(IonContent) content!: IonContent;
   @ViewChild('content', { static: false }) content!: IonContent;
   @ViewChildren('productCard', { read: ElementRef }) productCards!: QueryList<ElementRef<HTMLElement>>;
-  constructor(private ngZone: NgZone) {
+  constructor(
+    private ngZone: NgZone,
+    private breakpointObserver: BreakpointObserver,
+    private menuCtrl: MenuController
+  ) {
     addIcons({ chevronForwardOutline, logoFacebook, logoInstagram, mail });
+
+    this.breakpointObserver.observe([Breakpoints.Handset])
+      .subscribe(result => {
+        this.isMobile = result.matches;
+    });
   }
   ngOnDestroy(): void {
      this.io?.disconnect();
@@ -53,6 +65,8 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
   }
 
   ngOnInit() {
+    this.menuCtrl.close('main-menu');
+
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
 
     this.productList = [

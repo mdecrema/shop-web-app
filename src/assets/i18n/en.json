@@ -7,9 +7,9 @@
     "contacts": "Contacts",
     "our_approach": "Our approach",
     "learn_more": "Learn more",
-    "discover_our_techno": "Discover our technology",
-    "explore_our_science": "Explore our science",
-    "learn_about_our_impact": "Learn about our impact",
+    "discover": "Discover our technology",
+    "explore": "Explore branches we face with",
+    "learn": "Learn what we offer",
     "science_innovation": "Science & innovation",
     "science": "Science",
     "natural": "Natural",
@@ -20,5 +20,11 @@
     "versatility": "Versatile",
     "cheap": "Cheap",
     "long_live_food": "Long live the food!",
-    "compare": "Compare"
+    "compare": "Compare",
+    "scientific_foundation": "Scientific foundation",
+    "properties": "Properties",
+    "competitiveness": "Competitiveness",
+    "scalable": "Scalable",
+    "competitive": "Competitive",
+    "benefits_env_health": "Environment and health benefits"
 }

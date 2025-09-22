@@ -3,6 +3,7 @@ import { IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonConten
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-contacts',
@@ -12,8 +13,12 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 })
 export class ContactsComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private menuCtrl: MenuController
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.menuCtrl.close('main-menu');
+  }
 
 }

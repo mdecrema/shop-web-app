@@ -42,10 +42,11 @@
       <div class="navbar-hamburger-menu-wrapper" [class]="{'collapsed': collapse == true}">
       <div class="navbar-hamburger-menu-content">
         <div class="navbar-hamburger-button">
-          <ion-button fill="clear" color="light">
+          <!-- <ion-button fill="clear" color="light" (click)="setMenuToggle()">
             <ion-icon size="large" name="menu-outline"></ion-icon>
             <ion-label style="font-size: 16px;">Menu</ion-label>
-          </ion-button>
+          </ion-button> -->
+          <ion-menu-button menu="main-menu" color="light"></ion-menu-button>
         </div>
         </div>
       </div>
