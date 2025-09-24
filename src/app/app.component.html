@@ -1,22 +1,44 @@
 <ion-app>
   <ion-split-pane contentId="main-content" disabled="true">
     <ion-menu menuId="main-menu" contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>MENU</ion-list-header>
-          <ion-note></ion-note>
-        </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Sezioni</ion-list-header>
-
-          @for (route of routeList; track route; let i =$index) {
-            <ion-item lines="none" (click)="navigateToRoute(route)">
-              <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-              <ion-label>{{ route.i18n | translate}}</ion-label>
+      <ion-content >
+        <ion-menu-toggle auto-hide="true">
+          <!-- <ion-list id="inbox-list">
+            <ion-list-header>
+              <div style="width: 100px; height: 50px;">
+                <img src="./assets/logo/main-logo.png" alt="">
+              </div>
+            </ion-list-header>
+            <ion-note>lolisolutions.com</ion-note>
+          </ion-list> -->
+  
+          <ion-list id="labels-list">
+            <!-- <ion-list-header style="margin-bottom: 70px;"> -->
+              <ion-item lines="none" style="margin-bottom: 70px;">
+                <ion-label style="font-size: 22px;">MENU</ion-label>
+              <ion-icon aria-hidden="true" slot="end" ios="close-outline" size="large"></ion-icon>
+              </ion-item>
+            <!-- </ion-list-header> -->
+  
+            @for (route of routeList; track route; let i =$index) {
+              <ion-item (click)="navigateToRoute(route)">
+                <ion-label style="font-size: 20px;">{{ route.i18n | translate}}</ion-label>
+                <!-- <ion-icon aria-hidden="true" slot="end" ios="chevron-forward-outline" md="bookmark-sharp"></ion-icon> -->
+              </ion-item>
+            }
+          </ion-list>
+          
+          <ion-list style="margin-top: 70px;">
+            <ion-item>
+              <ion-select [value]="getCurrentLang()" (ionChange)="setLang($event)" color="light" toggleIcon="chevron-down-outline">
+                @for(lang of languagesAvailable; track languagesAvailable; let i = $index) {
+                <ion-select-option [value]="lang.code">{{ lang.description }}</ion-select-option>
+                }
+              </ion-select>
             </ion-item>
-          }
-        </ion-list>
+          </ion-list>
+
+        </ion-menu-toggle>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

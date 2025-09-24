@@ -2,9 +2,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
 import { MenuController } from '@ionic/angular';
-import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
+import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonSelect, IonSelectOption, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline } from 'ionicons/icons';
+import { add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline, languageOutline, chevronDownOutline, closeOutline } from 'ionicons/icons';
 import {
     TranslateService,
     TranslatePipe,
@@ -21,7 +21,7 @@ import { filter } from 'rxjs/operators';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [TranslatePipe, TranslateDirective, FooterComponent, RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterLink, IonRouterOutlet],
+  imports: [TranslatePipe, TranslateDirective, FooterComponent, RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonSelect, IonSelectOption, IonRouterLink, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
   private _router = inject(Router);
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
     this.translate.addLangs(['it', 'de', 'en']);
         this.translate.setFallbackLang('it');
         this.translate.use('it');
-    addIcons({ mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline });  
+    addIcons({ closeOutline, chevronDownOutline, languageOutline, add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline });  
   
       this.languagesAvailable = [
       {
@@ -102,6 +102,17 @@ export class AppComponent implements OnInit {
   }
 
   public navigateToRoute(route: IRoute) {
+    this.menuCtrl.close('main-menu');
     return this._router.navigate([route.route]);
   }
+
+  public getCurrentLang() {
+    return this.translate.getCurrentLang();
+  }
+
+  public setLang(event: any) {
+    const langCode = event.target.value;
+    this.translate.use(langCode);
+  }
+
 }

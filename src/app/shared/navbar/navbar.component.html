@@ -6,7 +6,7 @@
 <div class="navbar-container" [class]="{'collapsed': collapse == true}">
   <ion-row>
     <ion-col size="10" offset="1" size-sm="10" offset-sm="1" size-xs="12" offset-xs="0">
-      <div class="navbar-logo" [class]="{'collapsed': collapse == true}">
+      <div class="navbar-logo" [class]="{'collapsed': collapse == true}" (click)="navigateToRoute(routeList[0])">
         <img src="./assets/logo/main-logo.png" alt="">
       </div>
       <div class="navbar-routes-container" [class]="{'collapsed': collapse == true}">
@@ -30,7 +30,7 @@
             <ion-icon name="mail"></ion-icon>
           </div>
           <div class="navbar-right-content-button">
-            <ion-select [value]="getCurrentLang()" (ionChange)="setLang($event)" color="light">
+            <ion-select [value]="getCurrentLang()" (ionChange)="setLang($event)" color="light" toggleIcon="chevron-down-outline">
               @for(lang of languagesAvailable; track languagesAvailable; let i = $index) {
               <ion-select-option [value]="lang.code">{{ lang.description }}</ion-select-option>
               }

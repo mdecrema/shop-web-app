@@ -459,3 +459,13 @@ ion-col.menu-col {
 .btn-custom {
     --padding-start: none !important;
 }
+
+ion-menu {
+    --min-width: 90%;
+    // --ion-background-color: rgba(26, 136, 126, 0.1);
+    // --ion-text-color: #FFF;
+
+    // ion-list {
+    //     --ion-background-color: rgba(26, 136, 126, 0.1);
+    // }
+}

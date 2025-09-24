@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel } from '@ionic/angular/standalone';
+import { IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonList, IonItem, IonInput, IonSearchbar } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [TranslatePipe, TranslateDirective, IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel]
+  imports: [TranslatePipe, TranslateDirective, IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonList, IonItem, IonInput, IonSearchbar]
 })
 export class FooterComponent  implements OnInit {
 
