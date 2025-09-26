@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { IRoute } from './models/route.model';
 import { ILanguage } from './models/language.model';
 import { filter } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 // import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
 
@@ -38,7 +39,8 @@ export class AppComponent implements OnInit {
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor(
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private titleService: Title
   ) {
     this.translate.addLangs(['it', 'de', 'en']);
         this.translate.setFallbackLang('it');
@@ -93,6 +95,8 @@ export class AppComponent implements OnInit {
   
   }
   ngOnInit(): void {
+  this.titleService.setTitle('Loli Solutions');
+
     this._router.events.pipe(
     filter((event: any): event is NavigationEnd => event instanceof NavigationEnd)
 ).subscribe((event: NavigationEnd) => {

@@ -56,8 +56,6 @@ export class InnovationComponent  implements OnInit {
         active: false
       }
     ]
-
-
   }
 
   public getFeatureActiveTitle() {

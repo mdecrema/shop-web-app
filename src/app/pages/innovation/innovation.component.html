@@ -15,12 +15,12 @@
       </ion-row>
 
       <ion-row style="height: auto; margin-top: 70px;">
-        <ion-col size="10" offset="1" style="height: 350px; display: flex; flex-direction: row;">
+        <ion-col size="10" offset="1" style="display: flex; flex-direction: row;">
           <div style="width: 80%; height: 100%; padding-right: 30px; display: flex; flex-direction: column; justify-content: center;">
             <div>
             <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'scientific_foundation' | translate}}</p>
             <span style=" font-size: 32px;">{{ 'Polimeri funzionali' | translate}}</span>
-            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 1.5; margin-top: 20px;">
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 20px;">
                 Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
               <br>
               <br>
@@ -37,10 +37,10 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
 
       <ion-row style="height: auto; background: linear-gradient(to bottom, #F0EFEA, #fff); margin-top: 70px;">
         <ion-col size="10" offset="1" style="text-align: center; font-size: 38px; font-family: RobotoBold, sans-serif; margin-top: 70px;">
-          <span class="text-main-green">POLIMERI NON-TERRESTRI</span>
+          <span>POLIMERI <span class="text-main-green">NON-TERRESTRI</span></span>
         </ion-col>
 
-        <ion-col size="6" offset="3" style="text-align: center; font-family: RobotoCustom, sans-serif; font-size: 18px; line-height: 1.5; margin-top: 20px;">
+        <ion-col size-xs="10" size-sm="10" size-md="6" size-lg="6" size-xl="6" offset-xs="1" offset-sm="1" offset-md="3" offset-lg="3" offset-xl="3" style="text-align: center; font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; text-align: justify; margin-top: 20px;">
           Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego. 
         </ion-col>
 
@@ -62,15 +62,15 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
             </ion-col>
             <!-- Right Box -->
             <ion-col size="4" style="display: flex; flex-direction: column; justify-content: center;">
-              <div style="padding: 0 30px;">  
-                <div style="padding: 20px;">
-                  <span style="font-size: 30px;">{{ getFeatureActiveTitle() | translate }}</span>
+              <div style="height: 400px; padding: 20px 30px;">  
+                  <div style="width: 100%;">
+                    <span style="font-size: 30px;">{{ getFeatureActiveTitle() | translate }}</span>
+                  </div>
                   <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 30px;">{{ getFeatureActiveDescription() | translate}}</p>
                   <ion-button fill="clear" class="btn-custom" (click)="navigateToRoute('/solutions')">
                     <ion-label class="text-main-green">Le nostre soluzioni</ion-label>
                     <ion-icon slot="end" name="chevron-forward-outline" class="text-main-green"></ion-icon>
                   </ion-button>
-                </div>    
               </div>
             </ion-col>
             </ion-row>
@@ -83,9 +83,10 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
           <div style="display: flex; flex-direction: row; justify-content: space-around;">
               <div style="width: 80px; height: 80px; background-color: #fff; box-shadow: 2px 2px 10px gray; border: 4px solid #1C8C82; color: #1C8C82; border-radius: 100%; margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <ion-icon name="leaf-outline" style="font-size: 50px;"></ion-icon>
+                <!-- <ion-icon src="../../../assets/icon/test-svgrepo-com.svg" style="font-size: 50px; color: #1C8C82"></ion-icon> -->
               </div>
             <div style="width: 80px; height: 80px;  background-color: #fff; box-shadow: 2px 2px 10px gray; border: 4px solid #1C8C82; color: #1C8C82; border-radius: 100%; margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-              <ion-icon name="trending-up-outline" style="font-size: 50px;"></ion-icon>
+              <ion-icon name="trending-up-outline" style="font-size: 50px; "></ion-icon>
             </div>
             <div style="width: 80px; height: 80px;  background-color: #fff; box-shadow: 2px 2px 10px gray; border: 4px solid #1C8C82; color: #1C8C82; border-radius: 100%; margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
               <ion-icon name="flask-outline" style="font-size: 50px;"></ion-icon>
@@ -115,22 +116,8 @@ Le basse quantità necessarie per ottenere buoni risultati, sono un ulteriore be
                 </p>
               </div>
           </div>
-          <!-- Descriptions -->
         </ion-col>
       </ion-row>
-
-      <!-- <ion-row style="height: auto;">
-        <ion-col size="5" offset="1">
-          <div style="width: 100%; height: 400px;">
-            <img src="./assets/images/seaweed-8.png" alt="">
-          </div>
-        </ion-col>
-        <ion-col size="5">
-          <div  style="width: 100%; height: 400px;">
-           
-          </div>
-        </ion-col>
-      </ion-row> -->
 
       <ion-row style="height: auto; margin-top: 70px;">
         <ion-col size="10" offset="1" style="height: 400px; display: flex; flex-direction: row;">
@@ -141,7 +128,7 @@ Le basse quantità necessarie per ottenere buoni risultati, sono un ulteriore be
             <div>
             <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'benefits' | translate}}</p>
             <span style=" font-size: 32px;">{{ 'benefits_env_health' | translate}}</span>
-            <p style="font-family: RobotoCustom, sans-serif; font-size: 18px; line-height: 1.5; margin-top: 20px;">
+            <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 20px;">
                 Questi estratti sono completamente naturali, provenienti da una materia prima che sequestra enormi quantità di anidride carbonica e restituisce altrettante quantità di ossigeno. La crescita rapida facilita l’approvvigionamento, non compete in nessun modo con le risorse alimentari umane, non necessita ne di fertilizzazione ne di antiparassitari. Anzi, questa stessa materia prima si presta ad essere un valido fertilizzante per le piante in agricoltura in quanto biodegradabile.
 
               <br>

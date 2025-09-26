@@ -1,4 +1,8 @@
 :host {
+    .footer-row {
+        height: 400px;
+    }
+
     .footer-logo {
         width: 100px;
         height: 50px;
@@ -6,5 +10,11 @@
 
     ion-list {
         background: transparent !important;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .footer-row {
+            height: 500px;
+        }
     }
 }
