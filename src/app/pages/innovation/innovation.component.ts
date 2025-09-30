@@ -8,13 +8,13 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { IFeature } from 'src/app/models/feature.model';
 import { MenuController } from '@ionic/angular';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { FeaturesMobileComponent } from 'src/app/mobile/features-mobile/features-mobile.component';
+import { InnovationMobileComponent } from 'src/app/mobile/innovation-mobile/innovation-mobile.component';
 
 @Component({
   selector: 'app-innovation',
   templateUrl: './innovation.component.html',
   styleUrls: ['./innovation.component.scss'],
-  imports: [FeaturesMobileComponent, IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
+  imports: [InnovationMobileComponent, IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
 })
 export class InnovationComponent  implements OnInit {
   private _router = inject(Router);

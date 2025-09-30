@@ -1,3 +1,4 @@
+@if (!isMobile) {
 <ion-content [fullscreen]="true" #content >
   <ion-grid>
       <app-navbar
@@ -40,11 +41,10 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
           <span>POLIMERI <span class="text-main-green">NON-TERRESTRI</span></span>
         </ion-col>
 
-        <ion-col size-xs="10" size-sm="10" size-md="6" size-lg="6" size-xl="6" offset-xs="1" offset-sm="1" offset-md="3" offset-lg="3" offset-xl="3" style="text-align: center; font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; text-align: justify; margin-top: 20px;">
+        <ion-col size-xs="10" size-sm="10" size-md="6" size-lg="6" size-xl="6" offset-xs="1" offset-sm="1" offset-md="3" offset-lg="3" offset-xl="3" style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 20px;">
           Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego. 
         </ion-col>
 
-        @if (!isMobile) {
         <ion-col size="10" offset="1" style="min-height: 400px; margin-top: 50px;">
           <ion-row>
             <!-- Left Box -->
@@ -76,12 +76,6 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
             </ion-col>
             </ion-row>
         </ion-col>
-        }
-        @if (isMobile) {
-
-          <app-features-mobile></app-features-mobile>
-
-        }
       </ion-row>
 
       <ion-row class="background-image" style="height: auto; margin-top: 100px;">
@@ -164,3 +158,8 @@ Insomma, un vero e proprio tesoro nascosto che necessita di essere scoperto e op
       <app-footer></app-footer>
   </ion-grid>  
 </ion-content>
+}
+
+@if (isMobile) {
+<app-innovation-mobile></app-innovation-mobile>
+}

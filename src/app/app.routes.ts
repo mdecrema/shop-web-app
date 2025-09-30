@@ -3,11 +3,17 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./folder/folder.page').then((m) => m.FolderPage)
+    loadComponent: () => import('./folder/folder.page').then((m) => m.FolderPage),
+    data: {
+      title: 'Loli Solutions' 
+    }
   },
   {
     path: 'solutions',
-    loadComponent: () => import('./pages/solutions/solutions.component').then((m) => m.SolutionsComponent)
+    loadComponent: () => import('./pages/solutions/solutions.component').then((m) => m.SolutionsComponent),
+    data: {
+      title: 'Loli Solutions | Solutions' 
+    }
   },
   {
     path: 'solutions/:id',
@@ -15,7 +21,10 @@ export const routes: Routes = [
   },
   {
     path: 'innovation',
-    loadComponent: () => import('./pages/innovation/innovation.component').then((m) => m.InnovationComponent)
+    loadComponent: () => import('./pages/innovation/innovation.component').then((m) => m.InnovationComponent),
+    data: {
+      title: 'Loli Solutions | Innovation' 
+    }
   },
   {
     path: 'contacts',

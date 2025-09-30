@@ -9,13 +9,13 @@ import { IFeature } from 'src/app/models/feature.model';
 import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-features-mobile',
-  templateUrl: './features-mobile.component.html',
-  styleUrls: ['./features-mobile.component.scss'],
+  selector: 'app-innovation-mobile',
+  templateUrl: './innovation-mobile.component.html',
+  styleUrls: ['./innovation-mobile.component.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
 })
-export class FeaturesMobileComponent  implements OnInit {
+export class InnovationMobileComponent  implements OnInit {
   private _router = inject(Router);
 
   public featureList: IFeature[] = [];
