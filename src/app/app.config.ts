@@ -5,6 +5,7 @@ import {provideTranslateHttpLoader} from "@ngx-translate/http-loader";
 import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { routes } from './../app/app.routes';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +21,6 @@ export const appConfig: ApplicationConfig = {
       }),
       fallbackLang: 'it',
       lang: 'it'
-    })
+    }), provideClientHydration(withEventReplay())
   ],
 };

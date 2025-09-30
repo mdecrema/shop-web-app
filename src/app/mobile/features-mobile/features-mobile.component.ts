@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonContent, IonButton } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
@@ -7,36 +7,27 @@ import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { IFeature } from 'src/app/models/feature.model';
 import { MenuController } from '@ionic/angular';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { FeaturesMobileComponent } from 'src/app/mobile/features-mobile/features-mobile.component';
 
 @Component({
-  selector: 'app-innovation',
-  templateUrl: './innovation.component.html',
-  styleUrls: ['./innovation.component.scss'],
-  imports: [FeaturesMobileComponent, IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
+  selector: 'app-features-mobile',
+  templateUrl: './features-mobile.component.html',
+  styleUrls: ['./features-mobile.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
 })
-export class InnovationComponent  implements OnInit {
+export class FeaturesMobileComponent  implements OnInit {
   private _router = inject(Router);
-  
+
   public featureList: IFeature[] = [];
-  public isMobile: boolean = false;
 
   constructor(
-    private menuCtrl: MenuController,
-    private breakpointObserver: BreakpointObserver
-  ) {
-
-    this.breakpointObserver.observe([Breakpoints.Handset])
-      .subscribe(result => {
-        this.isMobile = result.matches;
-    });
- }
+  private menuCtrl: MenuController
+) { }
 
   ngOnInit() {
     this.menuCtrl.close('main-menu');
 
-    this.featureList = [
+this.featureList = [
       {
         id: 0,
         title: "new_opportunity",
@@ -66,32 +57,12 @@ export class InnovationComponent  implements OnInit {
         active: false
       }
     ]
-  }
-
-  public getFeatureActiveTitle() {
-    const featureActive = this.featureList.find(feature => feature.active);
-    return featureActive?.title || '';
-  }
-
-  public getFeatureActiveDescription() {
-    const featureActive = this.featureList.find(feature => feature.active);
-    return featureActive?.description || '';
-  }
+}
   
   public getFeatureActiveImage() {
     const featureActive = this.featureList.find(feature => feature.active);
     return featureActive?.image || '';
   }
 
-  public setFeatureActive(featureId: number) {
-    this.featureList = this.featureList.map((feature: IFeature) => ({
-      ...feature,
-      active: feature.id == featureId ? true : false
-    }));
-  }
-
-  public navigateToRoute(route: string) {
-    return this._router.navigate([route]);
-  }
 
 }

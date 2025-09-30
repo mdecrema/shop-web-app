@@ -44,6 +44,7 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
           Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego. 
         </ion-col>
 
+        @if (!isMobile) {
         <ion-col size="10" offset="1" style="min-height: 400px; margin-top: 50px;">
           <ion-row>
             <!-- Left Box -->
@@ -75,6 +76,12 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
             </ion-col>
             </ion-row>
         </ion-col>
+        }
+        @if (isMobile) {
+
+          <app-features-mobile></app-features-mobile>
+
+        }
       </ion-row>
 
       <ion-row class="background-image" style="height: auto; margin-top: 100px;">

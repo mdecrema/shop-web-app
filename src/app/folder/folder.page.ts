@@ -14,6 +14,7 @@ import { Router, RouterLinkActive } from "@angular/router";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { HomeMobileComponent } from '../mobile/home-mobile/home-mobile.component';
 import { MenuController } from '@ionic/angular';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-folder',
@@ -40,7 +41,8 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
   constructor(
     private ngZone: NgZone,
     private breakpointObserver: BreakpointObserver,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private seoService: SeoService
   ) {
     addIcons({ chevronForwardOutline, logoFacebook, logoInstagram, mail });
 
@@ -66,6 +68,12 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
 
   ngOnInit() {
     this.menuCtrl.close('main-menu');
+
+    // SEO
+    this.seoService.updateMeta(
+      'Home - Loli Solutions',
+      'Offriamo soluzioni alternative ed ecologiche. Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.'
+    );
 
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
 
