@@ -4,17 +4,30 @@
         [collapse]="true"
       ></app-navbar>
 
-
       <ion-row style="height: auto;">
         <ion-col size="10" offset="1" style="margin-top: 100px;">
-          <span style="font-size: 50px;">{{ 'solutions' | translate }}</span>
-          <p style="font-size: 16px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
-            Offriamo soluzioni alternative ed ecologiche per diverse applicazioni industriali. Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
-            <br>
-            <br>
-            La lunga esperienza maturata in anni di ricerca e sviluppo, collaborazioni, progetti e networking in tutta Europa, ti consente di avere a disposizione professionisti sempre aggiornati sulle nuove tecnologie e sulle esigenze del mercato. La fitta rete di consulenti specializzati offre un servizio competente e capace di fornire l’innovazione che la tua Azienda necessita per sfidare la concorrenza.
-          </p>
+          <span class="f-size-50">{{ 'solutions' | translate }}</span>
         </ion-col>
+      </ion-row>
+
+      <ion-row class="margin-v-70" style="height: auto;">
+        <ion-col size="10" offset="1">
+          <div>
+            <p class="f-size-12 text-uppercase" style="font-family: RobotoBold, sans-serif;">{{ 'years_on_research_development' | translate}}</p>
+          </div>
+          <div>
+            <span class="f-size-32">{{ 'versatility_of_application' | translate }}</span>
+            <p class="f-size-16 l-height" style="font-family: RobotoCustom, sans-serif;">
+              Offriamo soluzioni alternative ed ecologiche per diverse applicazioni industriali. Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
+              <br>
+              <br>
+              La lunga esperienza maturata in anni di ricerca e sviluppo, collaborazioni, progetti e networking in tutta Europa, ti consente di avere a disposizione professionisti sempre aggiornati sulle nuove tecnologie e sulle esigenze del mercato. La fitta rete di consulenti specializzati offre un servizio competente e capace di fornire l’innovazione che la tua Azienda necessita per sfidare la concorrenza.
+            </p>
+          </div>
+      </ion-col>
+      </ion-row>
+
+      <!-- <ion-row style="height: auto;">
         <ion-col size="10" offset="1">
           @for (item of productList; track item; let i = $index) {
           <div class="solution-card-container">
@@ -24,9 +37,7 @@
             <div class="solution-card-section description">
               <div>
                 <span style="font-size: 30px;">{{ item.name }}</span>
-                <!-- <div> -->
                   <p style="font-size: 16px; font-family: RobotCustom, sans-serif;">{{ item.mainDescription }}</p>
-                <!-- </div> -->
                  <ion-button style="min-width: 120px; --background: #1C8C82" (click)="navigateToDetails(item.id)">
                   <ion-label style="font-size: 10px; font-family: RobotCustom, sans-serif;">{{ 'details' | translate}}</ion-label>
                  </ion-button>
@@ -34,6 +45,87 @@
             </div>
           </div>
         }
+        </ion-col> 
+      </ion-row> -->
+
+      <ion-row class="margin-v-70" style="height: auto;">
+        <ion-col size="5" offset="2" style="margin-bottom: 30px;">
+          <span class="f-size-38 f-family-roboto">{{ 'discover_our' | translate }}
+            <span class="text-main-green">{{ 'products' | translate }}</span>
+          </span>
+        </ion-col>
+        <!-- First Row -->
+        <ion-col size="4" offset="2" class="mosaic-card p-relative" style="height: 500px; padding: 0;" (click)="navigateToDetails(productList[0].id)">
+          <img src="./assets/images/pittura-1.jpeg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+          <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+            <span class="text-white f-size-30">Paint </span>
+            <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+            <br>
+            <span class="text-white f-size-14">{{ productList[0].mainDescription }}</span>
+          </div>
+        </ion-col>
+        <ion-col size="4" style="height: 500px; padding: 0;">
+          <ion-row>
+            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
+              <img src="./assets/images/idrogeli-1.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+              <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+                <span class="text-white f-size-30">Phyto </span>
+                <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+                <br>
+                <span class="text-white f-size-14">{{ productList[1].mainDescription }}</span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mosaic-card p-relative"  style="height: 50%; padding: 0;">
+              <img src="./assets/images/img-1.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+              <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+                <span class="text-white f-size-30">Compo </span>
+                <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+                <br>
+                <span class="text-white f-size-14">{{ productList[2].mainDescription }}</span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <!-- Second Row -->
+        <ion-col size="4" offset="2" style="height: 500px; padding: 0;">
+          <ion-row>
+            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
+              <img src="./assets/images/cosmetic-3.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+              <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+                <span class="text-white f-size-30">Pack </span>
+                <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+                <br>
+                <span class="text-white f-size-14">{{ productList[3].mainDescription }}</span>
+              </div>
+            </ion-col>
+            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
+              <img src="./assets/images/sheet-mask-2.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+              <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+                <span class="text-white f-size-30">Layer </span>
+                <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+                <br>
+                <span class="text-white f-size-14">{{ productList[4].mainDescription }}</span>
+              </div>
+            </ion-col>
+            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
+              <img src="./assets/images/bg-15.png" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+              <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+                <span class="text-white f-size-30">Idea </span>
+                <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+                <br>
+                <span class="text-white f-size-14">{{ productList[6].mainDescription }}</span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="4" class="mosaic-card p-relative" style="height: 500px; padding: 0;">
+          <img src="./assets/images/cosmetic-1.jpeg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+          <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+            <span class="text-white f-size-30">Beauty </span>
+            <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+            <br>
+            <span class="text-white f-size-14">{{ productList[5].mainDescription }}</span>
+          </div>
         </ion-col>
       </ion-row>
 

@@ -4,7 +4,7 @@ import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/ro
 import { MenuController } from '@ionic/angular';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonSelect, IonSelectOption, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline, languageOutline, chevronDownOutline, closeOutline } from 'ionicons/icons';
+import { add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline, languageOutline, chevronDownOutline, closeOutline, arrowForwardOutline } from 'ionicons/icons';
 import {
     TranslateService,
     TranslatePipe,
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     this.translate.addLangs(['it', 'de', 'en']);
         this.translate.setFallbackLang('it');
         this.translate.use('it');
-    addIcons({ closeOutline, chevronDownOutline, languageOutline, add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline });  
+    addIcons({ closeOutline, chevronDownOutline, languageOutline, add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline, arrowForwardOutline });  
   
       this.languagesAvailable = [
       {

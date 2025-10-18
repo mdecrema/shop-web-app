@@ -66,7 +66,7 @@ export class HomeMobileComponent  implements OnInit {
         description: 'Una valida alternativa alla plastica conferendo elasticità al materiale. Adatti anche a produrre membrane porose particolarmente utili ad essere applicate nell’industria tessile come strati piu’ o meno sottili aventi proprietà isolanti e traspiranti.'
       },
       {
-        id: 5,
+        id: 6,
         name: 'Idea',
         mainDescription: 'Proponici una tua idea',
         description: 'Se hai un’idea che pensi possa essere interessante per  lo sviluppo di un nuovo prodotto aziendale o per migliorare quelli già esistenti, rivolgiti a noi! Siamo a tua disposizione per valutare le opzioni possibili e per supportarti nello sviluppo del prodotto piu’ adatto alle tue esigenze.'

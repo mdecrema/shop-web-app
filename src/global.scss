@@ -118,6 +118,14 @@ ion-app {
     background-color: #1C8C82;
 }
 
+.text-black {
+    color: #000;
+}
+
+.text-white {
+    color: #FFF;
+}
+
 .text-mid-dark {
     color: #23545B;
 }
@@ -152,4 +160,144 @@ ion-app {
 
 .text-light {
     color: #F1FFFF;
+}
+
+.f-family-roboto {
+    font-family: RobotoCustom, sans-serif;
+}
+
+.f-family-roboto-bold {
+    font-family: RobotoBold, sans-serif;
+}
+
+.f-size-12 {
+    font-size: 12px;
+}
+
+.f-size-14 {
+    font-size: 14px;
+}
+
+.f-size-16 {
+    font-size: 16px;
+}
+
+.f-size-18 {
+    font-size: 18px;
+}
+
+.f-size-20 {
+    font-size: 20px;
+}
+
+.f-size-22 {
+    font-size: 22px;
+}
+
+.f-size-24 {
+    font-size: 24px;
+}
+
+.f-size-26 {
+    font-size: 26px;
+}
+
+.f-size-28 {
+    font-size: 28px;
+}
+
+.f-size-30 {
+    font-size: 30px;
+}
+
+.f-size-32 {
+    font-size: 32px;
+}
+
+.f-size-34 {
+    font-size: 34px;
+}
+
+.f-size-36 {
+    font-size: 36px;
+}
+
+.f-size-38 {
+    font-size: 38px;
+}
+
+.f-size-40 {
+    font-size: 40px;
+}
+
+.f-size-50 {
+    font-size: 50px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.padding-v-10 {
+    padding: 10px 0;
+}
+
+.padding-v-20 {
+    padding: 20px 0;
+}
+
+.padding-v-30 {
+    padding: 30px 0;
+}
+
+.padding-l-10 {
+    padding: 0 10px;
+}
+
+.padding-l-20 {
+    padding: 0 20px;
+}
+
+.padding-l-30 {
+    padding: 0 30px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-30 {
+    padding: 30px;
+}
+
+.margin-v-70 {
+    margin: 70px 0;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.l-height {
+    line-height: 1.5;
+}
+
+.border-2-w {
+    border: 2px solid #FFF;
+}
+
+.border-5-w {
+    border: 5px solid #FFF;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.margin-top-70 {
+    margin-top: 70px;
 }
