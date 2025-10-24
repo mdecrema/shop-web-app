@@ -53,17 +53,17 @@ export class NavbarComponent  implements OnInit {
         route: '/solutions'
       },
       {
-        id: 1,
+        id: 2,
         i18n: 'innovation',
         route: '/innovation'
       },
       {
-        id: 0,
+        id: 3,
         i18n: 'about_us',
         route: '/about-us'
       },
       {
-        id: 0,
+        id: 4,
         i18n: 'contacts',
         route: '/contacts'
       }

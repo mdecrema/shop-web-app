@@ -30,35 +30,66 @@
         border: 2px solid #FFF;
         overflow: hidden;
         cursor: pointer;
-
-        img {
-            animation: zoomOutCardBackground 0.3s ease forwards; // default state
-        }
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: zoomOutCardBackground 0.3s ease forwards;
     }
+
+    // .mosaic-card {
+    //     border: 2px solid #FFF;
+    //     overflow: hidden;
+    //     cursor: pointer;
+
+    //     img {
+    //         animation: zoomOutCardBackground 0.3s ease forwards; // default state
+    //     }
+    // }
 
     .mosaic-card:hover {
-        img {
-            animation: zoomCardBackground 0.3s ease forwards;
-        }
+        // img {
+        //     animation: zoomCardBackground 0.3s ease forwards;
+        // }
+        animation: zoomCardBackground 0.3s ease forwards;
     }
+
+    // @keyframes zoomCardBackground {
+    //     0% {
+    //         transform: scale(1);
+    //     }
+
+    //     100% {
+    //         transform: scale(1.2);
+    //     }
+    // }
+
+    // @keyframes zoomOutCardBackground {
+    //     from {
+    //         transform: scale(1.2);
+    //     }
+
+    //     to {
+    //         transform: scale(1);
+    //     }
+    // }
 
     @keyframes zoomCardBackground {
         0% {
-            transform: scale(1);
+            background-size: 100%;
         }
 
         100% {
-            transform: scale(1.2);
+            background-size: 120%;
         }
     }
 
     @keyframes zoomOutCardBackground {
-        from {
-            transform: scale(1.2);
+        0% {
+            background-size: 120%;
         }
 
-        to {
-            transform: scale(1);
+        100% {
+            background-size: 100%;
         }
     }
 }

@@ -7,17 +7,18 @@ import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { NgSwitch, NgSwitchCase } from '@angular/common';
 import { MenuController } from '@ionic/angular';
+import { PaintComponent } from './paint/paint.component';
 
 @Component({
   selector: 'app-solution-details',
   templateUrl: './solution-details.component.html',
   styleUrls: ['./solution-details.component.scss'],
-  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, NgSwitch, NgSwitchCase, IonContent, TranslatePipe, TranslateDirective]
+  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, NgSwitch, NgSwitchCase, IonContent, TranslatePipe, TranslateDirective, PaintComponent]
 })
 export class SolutionDetailsComponent  implements OnInit {
   private _activatedRoute = inject(ActivatedRoute);
-  public productList: IProduct[] = [];
-  public solution?: IProduct;
+  public solutionList: IProduct[] = [];
+  public solution!: IProduct;
 
   constructor(
     private menuCtrl: MenuController
@@ -26,7 +27,7 @@ export class SolutionDetailsComponent  implements OnInit {
   ngOnInit() {
     this.menuCtrl.close('main-menu');
 
-    this.productList = [
+    this.solutionList = [
       {
         id: 0,
         name: 'Paint',
@@ -67,17 +68,20 @@ export class SolutionDetailsComponent  implements OnInit {
         id: 6,
         name: 'Idea',
         mainDescription: 'Proponici una tua idea',
-        description: 'Se hai un’idea che pensi possa essere interessante per  lo sviluppo di un nuovo prodotto aziendale o per migliorare quelli già esistenti, rivolgiti a noi! Siamo a tua disposizione per valutare le opzioni possibili e per supportarti nello sviluppo del prodotto piu’ adatto alle tue esigenze.'
+        description: 'Se hai un’idea che pensi possa essere interessante per lo sviluppo di un nuovo prodotto aziendale o per migliorare quelli già esistenti, rivolgiti a noi! Siamo a tua disposizione per valutare le opzioni possibili e per supportarti nello sviluppo del prodotto piu’ adatto alle tue esigenze.'
       }
     ];
 
     
     const solutionId = Number(this._activatedRoute.snapshot.paramMap.get('id'));
 
-    if (solutionId >= 0) {
-      this.solution = this.productList.find(item => item.id == solutionId);
-    }
+    this.solution = this.setSolutionById(solutionId);
 
+  }
+
+  public setSolutionById(solutionId: number): IProduct {
+      return (this.solutionList || [])
+        .find(solution => solution.id == solutionId) || this.solutionList[0];
   }
 
 }

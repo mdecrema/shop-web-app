@@ -55,10 +55,10 @@
           </span>
         </ion-col>
         <!-- First Row -->
-        <ion-col size="4" offset="2" class="mosaic-card p-relative" style="height: 500px; padding: 0;" (click)="navigateToDetails(productList[0].id)">
-          <img src="./assets/images/pittura-1.jpeg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+        <ion-col size="4" offset="2" class="mosaic-card p-relative" style="height: 500px; padding: 0; background-image: url('./../../../assets/images/pittura-1.jpeg');" (click)="navigateToDetails(productList[0].id)">
+          <!-- <img src="./assets/images/pittura-1.jpeg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
           <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-            <span class="text-white f-size-30">Paint </span>
+            <span class="text-white f-size-30">{{ productList[0].name }} </span>
             <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
             <br>
             <span class="text-white f-size-14">{{ productList[0].mainDescription }}</span>
@@ -66,19 +66,19 @@
         </ion-col>
         <ion-col size="4" style="height: 500px; padding: 0;">
           <ion-row>
-            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
-              <img src="./assets/images/idrogeli-1.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/idrogeli-1.avif');" (click)="navigateToDetails(productList[1].id)">
+              <!-- <img src="./assets/images/idrogeli-1.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
               <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-                <span class="text-white f-size-30">Phyto </span>
+                <span class="text-white f-size-30">{{ productList[1].name }} </span>
                 <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
                 <br>
                 <span class="text-white f-size-14">{{ productList[1].mainDescription }}</span>
               </div>
             </ion-col>
-            <ion-col size="12" class="mosaic-card p-relative"  style="height: 50%; padding: 0;">
-              <img src="./assets/images/img-1.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+            <ion-col size="12" class="mosaic-card p-relative"  style="height: 50%; padding: 0; background-image: url('./../../../assets/images/img-1.jpg');" (click)="navigateToDetails(productList[2].id)">
+              <!-- <img src="./assets/images/img-1.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
               <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-                <span class="text-white f-size-30">Compo </span>
+                <span class="text-white f-size-30">{{ productList[2].name }} </span>
                 <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
                 <br>
                 <span class="text-white f-size-14">{{ productList[2].mainDescription }}</span>
@@ -89,28 +89,28 @@
         <!-- Second Row -->
         <ion-col size="4" offset="2" style="height: 500px; padding: 0;">
           <ion-row>
-            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
-              <img src="./assets/images/cosmetic-3.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/cosmetic-3.jpg');" (click)="navigateToDetails(productList[3].id)">
+              <!-- <img src="./assets/images/cosmetic-3.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
               <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-                <span class="text-white f-size-30">Pack </span>
+                <span class="text-white f-size-30">{{ productList[3].name }} </span>
                 <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
                 <br>
                 <span class="text-white f-size-14">{{ productList[3].mainDescription }}</span>
               </div>
             </ion-col>
-            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
-              <img src="./assets/images/sheet-mask-2.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/sheet-mask-2.avif');" (click)="navigateToDetails(productList[4].id)">
+              <!-- <img src="./assets/images/sheet-mask-2.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
               <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-                <span class="text-white f-size-30">Layer </span>
+                <span class="text-white f-size-30">{{ productList[4].name }} </span>
                 <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
                 <br>
                 <span class="text-white f-size-14">{{ productList[4].mainDescription }}</span>
               </div>
             </ion-col>
-            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0;">
-              <img src="./assets/images/bg-15.png" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/bg-15.png');" (click)="navigateToDetails(productList[6].id)">
+              <!-- <img src="./assets/images/bg-15.png" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
               <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-                <span class="text-white f-size-30">Idea </span>
+                <span class="text-white f-size-30">{{ productList[6].name }} </span>
                 <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
                 <br>
                 <span class="text-white f-size-14">{{ productList[6].mainDescription }}</span>
@@ -118,10 +118,10 @@
             </ion-col>
           </ion-row>
         </ion-col>
-        <ion-col size="4" class="mosaic-card p-relative" style="height: 500px; padding: 0;">
-          <img src="./assets/images/cosmetic-1.jpeg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;">
+        <ion-col size="4" class="mosaic-card p-relative" style="height: 500px; padding: 0; background-image: url('./../../../assets/images/cosmetic-1.jpeg');" (click)="navigateToDetails(productList[5].id)">
+          <!-- <img src="./assets/images/cosmetic-1.jpeg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
           <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
-            <span class="text-white f-size-30">Beauty </span>
+            <span class="text-white f-size-30">{{ productList[5].name }} </span>
             <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
             <br>
             <span class="text-white f-size-14">{{ productList[5].mainDescription }}</span>
