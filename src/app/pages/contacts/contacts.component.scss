@@ -1,0 +1,24 @@
+:host {
+
+    .contact-card-icon {
+        height: 100%;
+        border: 1px solid #1C8C82;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-card-text {
+        height: 100%;
+        border: 1px solid;
+        border-left: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .contact-card-text:hover {
+        background-color: #F0EFEA;
+    }
+
+}
