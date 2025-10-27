@@ -8,12 +8,13 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { NgSwitch, NgSwitchCase } from '@angular/common';
 import { MenuController } from '@ionic/angular';
 import { PaintComponent } from './paint/paint.component';
+import { BeautyComponent } from './beauty/beauty.component';
 
 @Component({
   selector: 'app-solution-details',
   templateUrl: './solution-details.component.html',
   styleUrls: ['./solution-details.component.scss'],
-  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, NgSwitch, NgSwitchCase, IonContent, TranslatePipe, TranslateDirective, PaintComponent]
+  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, NgSwitch, NgSwitchCase, IonContent, TranslatePipe, TranslateDirective, PaintComponent, BeautyComponent]
 })
 export class SolutionDetailsComponent  implements OnInit {
   private _activatedRoute = inject(ActivatedRoute);
