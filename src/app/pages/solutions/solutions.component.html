@@ -27,8 +27,9 @@
       </ion-col>
       </ion-row>
 
-      <!-- <ion-row style="height: auto;">
-        <ion-col size="10" offset="1">
+      <!-- @if (isMobile) {
+      <ion-row class="margin-v-70" style="height: auto;">
+        <ion-col class="mosaic-card p-relative" size="10" offset="1">
           @for (item of productList; track item; let i = $index) {
           <div class="solution-card-container">
             <div class="solution-card-section picture">
@@ -46,8 +47,26 @@
           </div>
         }
         </ion-col> 
-      </ion-row> -->
+      </ion-row>
+      } -->
 
+
+      @if (isMobile) {
+      <ion-row class="margin-v-70" style="height: auto;">
+          @for (item of productList; track item; let i = $index) {
+        <ion-col  class="p-relative margin-v-40" size="10" offset="1" style="height: 400px; padding: 0; background-size: cover;" [style]="{'background-image': 'url(' + setBackgroundImage(item) +')'}" (click)="navigateToDetails(item.id)">
+          <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
+            <span class="text-white f-size-30">{{ item.name }} </span>
+            <ion-icon color="light" name="arrow-forward-outline" class="f-size-22"></ion-icon>
+            <br>
+            <span class="text-white f-size-14">{{ item.mainDescription }}</span>
+          </div>
+        </ion-col>
+        }
+      </ion-row>
+      }
+      
+      @if (!isMobile) {
       <ion-row class="margin-v-70" style="height: auto;">
         <ion-col size="5" offset="2" style="margin-bottom: 30px;">
           <span class="f-size-38 f-family-roboto">{{ 'discover_our' | translate }}
@@ -128,6 +147,7 @@
           </div>
         </ion-col>
       </ion-row>
+      }
 
 
       <app-footer></app-footer>
