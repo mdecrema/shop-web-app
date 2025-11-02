@@ -34,6 +34,20 @@
         background-position: center;
         background-repeat: no-repeat;
         animation: zoomOutCardBackground 0.3s ease forwards;
+
+        span {
+            text-shadow: 1px 1px 3px #4a4a4a;
+        }
+    }
+
+    .mosaic-card-text-box {
+        width: 100%;
+        padding: 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // background-color: #004958;
+        // opacity: 0.4;
     }
 
     // .mosaic-card {
