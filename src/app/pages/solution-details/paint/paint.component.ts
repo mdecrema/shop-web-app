@@ -10,7 +10,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
   selector: 'app-paint',
   templateUrl: './paint.component.html',
   styleUrls: ['./paint.component.scss'],
-  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective]
+  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, TranslatePipe]
 })
 export class PaintComponent  implements OnInit {
   public _solution: IProduct;

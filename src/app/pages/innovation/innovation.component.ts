@@ -14,7 +14,7 @@ import { InnovationMobileComponent } from 'src/app/mobile/innovation-mobile/inno
   selector: 'app-innovation',
   templateUrl: './innovation.component.html',
   styleUrls: ['./innovation.component.scss'],
-  imports: [InnovationMobileComponent, IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, IonButton]
+  imports: [InnovationMobileComponent, IonRow, IonGrid, IonCol, IonIcon, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, IonButton]
 })
 export class InnovationComponent  implements OnInit {
   private _router = inject(Router);
@@ -40,28 +40,28 @@ export class InnovationComponent  implements OnInit {
       {
         id: 0,
         title: "new_opportunity",
-        description: "Questi materiali possono essere adatti a sostituire plastiche convenzionali, utilizzate in diversi settori. \nPossono anche costituire una valida alternativa a sostanze e composti di sintesi comunemente utilizzati nelle mescole o nelle formulazioni. \nInoltre si può ricorrere anche all’accoppiamento con altri materiali, per creare nuove soluzioni di mercato.",
+        description: "innovation_page_new_opportunity_description",
         image: "./assets/images/idrogeli-1.avif",
         active: true
       },
       {
         id: 1,
         title: "infinite_application",
-        description: "Sono efficaci come matrici leganti per diversi tipi di materiali compositi, come resine ed addensanti in pitture e vernici, come membrane traspiranti protettive, come matrici inclusive di sostanze a lento rilascio in agricoltura biologica e come pellicole sottili per il settore packaging, anche a contatto con gli alimenti.",
+        description: "innovation_page_infinite_application_description",
         image: "./assets/images/img-1.jpg",
         active: false
       },
       {
         id: 2,
         title: "properties",
-        description: "Le loro eccezionali proprietà li rendono unici: possono essere trasparenti, si puo’ modulare la resistenza meccanica, sono adatti come materiali a contatto coi cibi, hanno proprietà mediche e cosmetiche, sono chelanti di metalli pesanti, biodegradabili e alcuni addirittura edibili. Sono ritardanti di fiamma e agiscono come fertilizzanti naturali. Queste sono solo alcune delle proprietà scoperte finora.",
+        description: "innovation_page_properties_description",
         image: "./assets/images/film-1.jpg",
         active: false
       },
       {
         id: 3,
         title: "competitive",
-        description: "La loro grande disponibilità e l’efficacia già a basse quantità, gli consente di essere economicamente competitivi.",
+        description: "innovation_page_competitive_description",
         image: "./assets/images/idrogeli-2.jpg",
         active: false
       }

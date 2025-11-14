@@ -18,10 +18,10 @@
           <div>
             <span class="f-size-32">{{ 'versatility_of_application' | translate }}</span>
             <p class="f-size-16 l-height" style="font-family: RobotoCustom, sans-serif;">
-              Offriamo soluzioni alternative ed ecologiche per diverse applicazioni industriali. Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
+              {{ 'solutions_page_description_one' | translate}}
               <br>
               <br>
-              La lunga esperienza maturata in anni di ricerca e sviluppo, collaborazioni, progetti e networking in tutta Europa, ti consente di avere a disposizione professionisti sempre aggiornati sulle nuove tecnologie e sulle esigenze del mercato. La fitta rete di consulenti specializzati offre un servizio competente e capace di fornire l’innovazione che la tua Azienda necessita per sfidare la concorrenza.
+              {{ 'solutions_page_description_two' | translate}}
             </p>
           </div>
       </ion-col>
@@ -53,7 +53,7 @@
 
       @if (isMobile) {
       <ion-row class="margin-v-70" style="height: auto;">
-          @for (item of productList; track item; let i = $index) {
+          @for (item of productList; track item.id; let i = $index) {
         <ion-col  class="p-relative margin-v-40" size="10" offset="1" style="height: 500px; padding: 0; background-size: cover;" [style]="{'background-image': 'url(' + setBackgroundImage(item) +')'}" (click)="navigateToDetails(item.id)">
           <div style="width: 100%; padding: 30px; position: absolute; bottom: 0; left: 0;">
             <span class="text-white f-size-30">{{ item.name }} </span>
@@ -85,7 +85,7 @@
         </ion-col>
         <ion-col size="4" style="height: 500px; padding: 0;">
           <ion-row>
-            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/idrogeli-1.avif');" (click)="navigateToDetails(productList[1].id)">
+            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/idrogeli-1.avif');">
               <!-- <img src="./assets/images/idrogeli-1.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
   
               <div class="mosaic-card-text-box">
@@ -95,7 +95,7 @@
                 <span class="text-white f-size-14">{{ productList[1].mainDescription }}</span>
               </div>
             </ion-col>
-            <ion-col size="12" class="mosaic-card p-relative"  style="height: 50%; padding: 0; background-image: url('./../../../assets/images/img-1.jpg');" (click)="navigateToDetails(productList[2].id)">
+            <ion-col size="12" class="mosaic-card p-relative"  style="height: 50%; padding: 0; background-image: url('./../../../assets/images/img-1.jpg');">
               <!-- <img src="./assets/images/img-1.jpg" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
    
               <div class="mosaic-card-text-box">
@@ -120,7 +120,7 @@
                 <span class="text-white f-size-14">{{ productList[3].mainDescription }}</span>
               </div>
             </ion-col>
-            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/sheet-mask-2.avif');" (click)="navigateToDetails(productList[4].id)">
+            <ion-col size="6" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/sheet-mask-2.avif');" >
               <!-- <img src="./assets/images/sheet-mask-2.avif" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
   
               <div class="mosaic-card-text-box">
@@ -130,7 +130,7 @@
                 <span class="text-white f-size-14">{{ productList[4].mainDescription }}</span>
               </div>
             </ion-col>
-            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/bg-15.png');" (click)="navigateToDetails(productList[6].id)">
+            <ion-col size="12" class="mosaic-card p-relative" style="height: 50%; padding: 0; background-image: url('./../../../assets/images/bg-15.png');" >
               <!-- <img src="./assets/images/bg-15.png" class="mosaic-card-img" alt="" style="width: 100%; height: 100%;"> -->
   
               <div class="mosaic-card-text-box">

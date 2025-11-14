@@ -84,9 +84,59 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'LexendMedium';
+    src: url('/assets/fonts/Lexend/Lexend-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LexendSemiBold';
+    src: url('/assets/fonts/Lexend/static/Lexend-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LexendExtraBold';
+    src: url('/assets/fonts/Lexend/static/Lexend-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// New Fonts
+@font-face {
+    font-family: 'CaveatRegular';
+    src: url('/assets/fonts/Caveat/static/Caveat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CaveatBold';
+    src: url('/assets/fonts/Caveat/static/Caveat-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSansRegular';
+    src: url('/assets/fonts/WorkSans/static/WorkSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSansBold';
+    src: url('/assets/fonts/WorkSans/static/WorkSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --ion-font-family: 'NotoSans', sans-serif;
+    --swiper-navigation-color: #FFF !important;
 }
 
 html,
@@ -170,6 +220,30 @@ ion-app {
     font-family: RobotoBold, sans-serif;
 }
 
+.f-family-lexend-medium {
+    font-family: LexendMedium, sans-serif;
+}
+
+.f-family-lexend-semi-bold {
+    font-family: LexendSemiBold, sans-serif;
+}
+
+.f-family-lexend-extra-bold {
+    font-family: LexendExtraBold, sans-serif;
+}
+
+.f-family-caveat-regular {
+    font-family: CaveatRegular, sans-serif;
+}
+
+.f-family-caveat-bold {
+    font-family: CaveatBold, sans-serif;
+}
+
+.f-family-work-sans-regular {
+    font-family: WorkSansRegular, sans-serif;
+}
+
 .f-size-12 {
     font-size: 12px;
 }
@@ -230,8 +304,48 @@ ion-app {
     font-size: 40px;
 }
 
+.f-size-42 {
+    font-size: 42px;
+}
+
+.f-size-44 {
+    font-size: 44px;
+}
+
+.f-size-46 {
+    font-size: 46px;
+}
+
+.f-size-48 {
+    font-size: 48px;
+}
+
 .f-size-50 {
     font-size: 50px;
+}
+
+.f-size-60 {
+    font-size: 60px;
+}
+
+.f-size-62 {
+    font-size: 62px;
+}
+
+.f-size-64 {
+    font-size: 64px;
+}
+
+.f-size-66 {
+    font-size: 66px;
+}
+
+.f-size-68 {
+    font-size: 68px;
+}
+
+.f-size-70 {
+    font-size: 70px;
 }
 
 .text-uppercase {

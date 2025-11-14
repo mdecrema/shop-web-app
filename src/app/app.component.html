@@ -20,7 +20,7 @@
               </ion-item>
             <!-- </ion-list-header> -->
   
-            @for (route of routeList; track route; let i =$index) {
+            @for (route of routeList; track route.id; let i =$index) {
               <ion-item (click)="navigateToRoute(route)">
                 <ion-label style="font-size: 20px;">{{ route.i18n | translate}}</ion-label>
                 <!-- <ion-icon aria-hidden="true" slot="end" ios="chevron-forward-outline" md="bookmark-sharp"></ion-icon> -->
@@ -31,7 +31,7 @@
           <ion-list style="margin-top: 70px;">
             <ion-item>
               <ion-select [value]="getCurrentLang()" (ionChange)="setLang($event)" color="light" toggleIcon="chevron-down-outline">
-                @for(lang of languagesAvailable; track languagesAvailable; let i = $index) {
+                @for(lang of languagesAvailable; track lang.id; let i = $index) {
                 <ion-select-option [value]="lang.code">{{ lang.description }}</ion-select-option>
                 }
               </ion-select>

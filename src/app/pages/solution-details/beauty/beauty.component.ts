@@ -9,7 +9,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
   selector: 'app-beauty',
   templateUrl: './beauty.component.html',
   styleUrls: ['./beauty.component.scss'],
-  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective]
+  imports: [IonRow, IonCol, TranslatePipe]
 })
 export class BeautyComponent  implements OnInit {
   public _solution: IProduct;

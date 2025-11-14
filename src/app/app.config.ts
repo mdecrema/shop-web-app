@@ -6,6 +6,9 @@ import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } 
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { routes } from './../app/app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 export const appConfig: ApplicationConfig = {
   providers: [

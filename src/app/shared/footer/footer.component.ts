@@ -8,7 +8,7 @@ import { IRoute } from 'src/app/models/route.model';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [TranslatePipe, TranslateDirective, IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonList, IonItem, IonInput, IonSearchbar]
+  imports: [TranslatePipe, IonRow, IonCol, IonLabel, IonList, IonSearchbar]
 })
 export class FooterComponent  implements OnInit {
   private _router = inject(Router);
@@ -29,17 +29,17 @@ export class FooterComponent  implements OnInit {
         route: '/solutions'
       },
       {
-        id: 1,
+        id: 2,
         i18n: 'innovation',
         route: '/innovation'
       },
       {
-        id: 0,
+        id: 3,
         i18n: 'about_us',
         route: '/about-us'
       },
       {
-        id: 0,
+        id: 4,
         i18n: 'contacts',
         route: '/contacts'
       }

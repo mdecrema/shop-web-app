@@ -4,18 +4,15 @@
         [collapse]="true"
       ></app-navbar>
 
-
       <ion-row style="height: auto;">
         <ion-col size="10" offset="1" style="margin-top: 100px;">
           <span class="f-size-50">{{ solution.name }}</span>
         </ion-col>
       </ion-row>
+
 @switch (solution.id) {
   @case (0) {
-    <app-paint
-      [solution]="solution"
-    >
-    </app-paint>
+    <app-paint [solution]="solution"></app-paint>
   }
   @case (1) {
 
@@ -24,18 +21,7 @@
 
   }
   @case (3) {
-    
-      <ion-row class="background-image" style="height: auto; margin-top: 70px;">
-          <ion-col size="10" offset="1" style="text-align: center; font-size: 32px; font-family: RobotoBold, sans-serif; margin-top: 70px;">
-            <span>{{ 'long_live_food' | translate}}</span>
-          </ion-col>
-      </ion-row>
-
-      <ion-row style="height: auto; margin-top: 70px;">
-        <ion-col>
-          <span>{{ 'compare' | translate}}</span>
-        </ion-col>
-      </ion-row>
+    <app-pack [solution]="solution"></app-pack>
   }
   @case (4) {
 

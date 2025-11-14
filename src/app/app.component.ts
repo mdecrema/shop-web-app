@@ -4,7 +4,7 @@ import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/ro
 import { MenuController } from '@ionic/angular';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonSelect, IonSelectOption, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline, languageOutline, chevronDownOutline, closeOutline, arrowForwardOutline, callOutline, timeOutline } from 'ionicons/icons';
+import { add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, leafOutline, barChartOutline, flaskOutline, trendingUpOutline, languageOutline, chevronDownOutline, closeOutline, arrowForwardOutline, callOutline, timeOutline, logoWhatsapp, globeOutline, addOutline, removeOutline } from 'ionicons/icons';
 import {
     TranslateService,
     TranslatePipe,
@@ -22,7 +22,7 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-  imports: [TranslatePipe, TranslateDirective, FooterComponent, RouterLink, RouterLinkActive, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonSelect, IonSelectOption, IonRouterLink, IonRouterOutlet],
+  imports: [TranslatePipe, IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonMenuToggle, IonItem, IonIcon, IonLabel, IonSelect, IonSelectOption, IonRouterOutlet],
 })
 export class AppComponent implements OnInit {
   private _router = inject(Router);
@@ -42,10 +42,14 @@ export class AppComponent implements OnInit {
     private menuCtrl: MenuController,
     private titleService: Title
   ) {
+
+    // Set Language
     this.translate.addLangs(['it', 'de', 'en']);
-        this.translate.setFallbackLang('it');
-        this.translate.use('it');
-    addIcons({ closeOutline, chevronDownOutline, languageOutline, add, remove, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline, arrowForwardOutline, callOutline, timeOutline });  
+    const selectedLang = localStorage.getItem('lang') ?? 'it';
+    this.translate.setFallbackLang(selectedLang);
+    this.translate.use(selectedLang);
+
+    addIcons({ closeOutline, chevronDownOutline, languageOutline, add, addOutline, remove, removeOutline, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, chevronForwardOutline, logoFacebook, logoInstagram, mail, menuOutline, barChartOutline, flaskOutline, trendingUpOutline, leafOutline, arrowForwardOutline, callOutline, timeOutline, logoWhatsapp, globeOutline });  
   
       this.languagesAvailable = [
       {
@@ -59,7 +63,7 @@ export class AppComponent implements OnInit {
         description: 'English'
       },
       {
-        id: 0,
+        id: 2,
         code: 'de',
         description: 'German'
       }
@@ -77,17 +81,17 @@ export class AppComponent implements OnInit {
         route: '/solutions'
       },
       {
-        id: 1,
+        id: 2,
         i18n: 'innovation',
         route: '/innovation'
       },
       {
-        id: 0,
+        id: 3,
         i18n: 'about_us',
         route: '/about-us'
       },
       {
-        id: 0,
+        id: 4,
         i18n: 'contacts',
         route: '/contacts'
       }
@@ -99,10 +103,10 @@ export class AppComponent implements OnInit {
 
     this._router.events.pipe(
     filter((event: any): event is NavigationEnd => event instanceof NavigationEnd)
-).subscribe((event: NavigationEnd) => {
-    // A route change has occurred, now close the side menu
-    this.menuCtrl.close('main-menu');
-});
+      ).subscribe((event: NavigationEnd) => {
+        // A route change has occurred, now close the side menu
+        this.menuCtrl.close('main-menu');
+      });
   }
 
   public navigateToRoute(route: IRoute) {
@@ -116,7 +120,13 @@ export class AppComponent implements OnInit {
 
   public setLang(event: any) {
     const langCode = event.target.value;
+    localStorage.setItem('lang', langCode);
     this.translate.use(langCode);
+  }
+
+  toggleDarkTheme(shouldAdd: boolean) {
+    // You can toggle the class on document.body or document.documentElement (<html>)
+    document.body.classList.toggle('dark-theme', shouldAdd);
   }
 
 }

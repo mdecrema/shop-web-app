@@ -1,0 +1,102 @@
+:host {
+    ion-menu-button {
+        color: var(--ion-color-primary);
+    }
+
+    #container {
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #container strong {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    #container p {
+        font-size: 16px;
+        line-height: 22px;
+        color: #8c8c8c;
+        margin: 0;
+    }
+
+    #container a {
+        text-decoration: none;
+    }
+
+    // .slogan_text_first {
+    //     font-size: 48px;
+    //     // font-family: WorkSansRegular, sans-serif;
+    //     // color: #36887D;
+    //     color: #006D70;
+    //     // color: #004958;
+    //     text-shadow: 2px 2px 32px #fff;
+    //     opacity: 0;
+    //     animation: textFadeIn 3s ease forwards;
+    // }
+    .slogan_text_first {
+        // font-size: 48px;
+        // color: #36887D;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: url('../../../assets/images/bg-33.jpeg');
+        background-clip: text;
+        background-size: 150%;
+        text-shadow: 2px 2px 32px #fff;
+        opacity: 0;
+        // animation: textFadeIn 3s ease forwards;
+        animation: textFadeIn 3s ease forwards, animateBgImage 40s infinite linear;
+    }
+
+    // .slogan_text_second {
+    //     font-size: 48px;
+    //     // font-family: CaveatBold, sans-serif;
+    //     color: #36887D;
+    //     text-shadow: 2px 2px 32px #fff;
+    //     opacity: 0;
+    //     animation: textFadeIn 3s ease forwards;
+    //     animation-delay: 2s;
+    // }
+
+    .slogan_text_second {
+        // font-size: 48px;
+        // color: #36887D;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: url('../../../assets/images/bg-33.jpeg');
+        background-clip: text;
+        background-size: 150%;
+        text-shadow: 2px 2px 32px #fff;
+        opacity: 0;
+        // animation: textFadeIn 3s ease forwards;
+        animation: textFadeIn 3s ease forwards, animateBgImage 40s infinite linear;
+        animation-delay: 2s;
+    }
+
+    @keyframes textFadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes animateBgImage {
+        0% {
+            background-position: 0 50%;
+        }
+
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+}

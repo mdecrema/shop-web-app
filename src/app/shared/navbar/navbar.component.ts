@@ -9,7 +9,7 @@ import { Router, RouterLinkActive } from "@angular/router";
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  imports: [TranslatePipe, TranslateDirective, IonMenuButton, IonRow, IonCard, IonCol, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption, RouterLinkActive]
+  imports: [TranslatePipe, IonMenuButton, IonRow, IonCol, IonIcon, IonSelect, IonSelectOption]
 })
 export class NavbarComponent  implements OnInit {
   private _router = inject(Router);
@@ -35,7 +35,7 @@ export class NavbarComponent  implements OnInit {
         description: 'English'
       },
       {
-        id: 0,
+        id: 2,
         code: 'de',
         description: 'German'
       }
@@ -85,6 +85,7 @@ export class NavbarComponent  implements OnInit {
 
   public setLang(event: any) {
     const langCode = event.target.value;
+    localStorage.setItem('lang', langCode);
     this.translate.use(langCode);
   }
 
