@@ -1,3 +1,4 @@
+ @if (!isMobile) {
 <ion-row  style="height: auto; margin-top: 70px;">
         <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/hamburger.png); background-size: cover; background-repeat: no-repeat;" offset="1">
 
@@ -62,33 +63,6 @@
 
       </ion-row>
 
-      <!-- <ion-row>
-        <ion-col size="10" offset="1">
-          <ion-row>
-            <ion-col size="2" class="bg-green" style="height: 200px; border: 1px solid #1C8B81; display: flex; flex-direction: row; justify-content: center; align-self: center; align-items: center;">
-            <div>
-              <ion-icon slot="start" size="large" name="add-outline" color="light" style="transform: scale(3);"></ion-icon>
-            </div>
-            </ion-col>
-            <ion-col size="2" class="bg-dark" style="height: 200px; border: 1px solid #004958; display: flex; flex-direction: row; justify-content: center; align-self: center; align-items: center;">
-              <div>
-                <ion-icon slot="start" size="large" name="remove-outline" color="light" style="transform: scale(3);"></ion-icon>               
-              </div>
-            </ion-col>
-            <ion-col size="2" class="bg-dark" style="height: 200px; border: 1px solid #004958; display: flex; flex-direction: row; justify-content: center; align-self: center; align-items: center;">
-              <div>
-                <ion-icon slot="start" size="large" name="remove-outline" color="light" style="transform: scale(3);"></ion-icon>               
-              </div>
-            </ion-col>
-            <ion-col size="2" class="bg-dark" style="height: 200px; border: 1px solid #004958; display: flex; flex-direction: row; justify-content: center; align-self: center; align-items: center;">
-              <div>
-                <ion-icon slot="start" size="large" name="remove-outline" color="light" style="transform: scale(3);"></ion-icon>               
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-col>
-      </ion-row> -->
-
       <ion-row style="height: auto; margin-top: 70px;">
         <ion-col size="10" offset="1" style="padding: 10px 0; position: relative;">
           <div style="display: flex; flex-direction: row; justify-content: space-between;"> 
@@ -112,15 +86,8 @@
           </div>
         </ion-col>
       </ion-row>
-      
-      <!-- <ion-row>
-         <ion-col size="10" offset="1" style="margin: 70px 0;">
-          <span class="f-size-32">{{ 'properties' | translate }}</span>
-          <p class="f-size-16 f-family-roboto l-height">
-            {{ 'paint_section_two_description_one' | translate }}
-            <br>
-            <br>
-            {{ 'paint_section_two_description_two' | translate }}  
-          </p>
-        </ion-col>
-      </ion-row> -->
+}
+
+ @if (isMobile) {
+  <app-pack-mobile></app-pack-mobile>
+ }

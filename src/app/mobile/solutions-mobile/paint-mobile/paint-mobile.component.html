@@ -1,3 +1,137 @@
-<p>
-  paint-mobile works!
-</p>
+      <ion-row class="h-auto margin-top-70">
+      <ion-col size="12" style="padding: 10px; position: relative;">
+        <div>
+          <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'our_approach' | translate}}</p>
+        </div>   
+        <div> 
+          <div style="width: 100%">
+            <p class="f-size-32">
+              <span style="color: #1C8B81;">{{ 'paint_section_one_title_one' | translate }}</span> {{ 'paint_section_one_title_two' | translate }} 
+            </p>
+          </div>
+          <div style="width: 100%">
+            <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
+            <p style="font-size: 14px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+              {{ 'paint_section_one_description_one' | translate }} <strong class="f-size-20">{{ 'hundred_per_cent_naturals' | translate }}</strong>{{ 'paint_section_one_description_two' | translate }}
+                <br>
+                <br>
+                {{ 'paint_section_one_description_three' | translate }}
+            </p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="h-auto margin-top-70">
+          <ion-col size="12">
+<div #mainSplide class="splide" role="group" aria-label="Autoplaying Content Carousel" style="width: 100%;" data-splide='{
+    "perPage": 1,
+    "focus": "center",
+    "gap": "4rem",
+    "arrows": false,
+    "start": 2,
+    "resetOnDrag": true,
+    "pagination": false
+}'>
+  <div class="splide__track">
+    <ul class="splide__list" style="height: 200px;">
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/pink-color-3.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/prove-colori.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/pink-color-2.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/aqua-color-1.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/color-pouring.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+          </ion-col>
+      </ion-row>
+
+      <ion-row style="height: auto; margin-top: 70px; background: linear-gradient(to bottom, #F0EFEA, #fff); padding-top: 30px;">
+       
+        <ion-col size="12" style="padding: 0;">
+          <ion-card>
+            <ion-card-header class="bg-dark padding-30">
+              <ion-card-title color="light" class="f-size-24 text-uppercase">
+                {{ 'uses' | translate}}
+              </ion-card-title>
+              <ion-card-subtitle color="light" class="f-size-18">
+                {{ 'uses_subtitle' | translate }}
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content style="min-height: 300px;">
+              <ul>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_one_label_one' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_one_label_two' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_one_label_three' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_one_label_four' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_one_label_five' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_one_label_six' | translate }}
+                </li>
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" style="padding: 0;">
+          <ion-card>
+            <ion-card-header class="bg-green padding-30">
+              <ion-card-title color="light" class="f-size-24 text-uppercase">
+                {{ 'material' | translate}}
+              </ion-card-title>
+              <ion-card-subtitle color="light" class="f-size-18">
+                {{ 'material_subtitle' | translate }}
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content style="min-height: 300px;">
+              <ul>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_two_label_one' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_two_label_two' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_two_label_three' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_two_label_four' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'paint_box_two_label_five' | translate }}
+                </li>
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+         <ion-col size="12" style="margin: 70px 0;">
+          <span class="f-size-32">{{ 'properties' | translate }}</span>
+          <p class="f-size-14 f-family-roboto l-height">
+            {{ 'paint_section_two_description_one' | translate }}
+            <br>
+            <br>
+            {{ 'paint_section_two_description_two' | translate }}  
+          </p>
+        </ion-col>
+      </ion-row>

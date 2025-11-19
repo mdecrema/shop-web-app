@@ -2,21 +2,31 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonContent } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
+import { PaintMobileComponent } from 'src/app/mobile/solutions-mobile/paint-mobile/paint-mobile.component';
 import { IProduct } from 'src/app/models/product.model';
 import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-paint',
   templateUrl: './paint.component.html',
   styleUrls: ['./paint.component.scss'],
-  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, TranslatePipe]
+  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, TranslatePipe, PaintMobileComponent]
 })
 export class PaintComponent  implements OnInit {
   public _solution: IProduct;
+  public isMobile: boolean = false;
 
-  constructor() {
+  constructor(
+     private breakpointObserver: BreakpointObserver,  
+  ) {
     this._solution = {} as IProduct;
+
+    this.breakpointObserver.observe([Breakpoints.Handset])
+      .subscribe(result => {
+        this.isMobile = result.matches;
+    });
   }
 
   ngOnInit() {}

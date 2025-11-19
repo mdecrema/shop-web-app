@@ -1,3 +1,4 @@
+@if (!isMobile) {
 <ion-row  style="height: auto; margin-top: 70px;">
         <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/pink-color-3.jpg); background-size: cover; background-repeat: no-repeat;" offset="1">
 
@@ -115,3 +116,8 @@
           </p>
         </ion-col>
       </ion-row>
+}
+
+@if (isMobile) {
+  <app-paint-mobile></app-paint-mobile>
+}

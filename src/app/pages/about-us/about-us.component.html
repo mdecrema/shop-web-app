@@ -1,3 +1,4 @@
+@if (!isMobile) {
 <ion-content [fullscreen]="true" #content >
   <ion-grid>
       <app-navbar
@@ -10,16 +11,16 @@
         </ion-col>
       </ion-row>
 
-      <ion-row class="h-auto margin-v-70">
-        <ion-col size="8" offset="1" class="margin-v-70">
+      <ion-row class="h-auto margin-top-70">
+        <ion-col size="8" offset="1">
           <span class="f-size-32">{{ 'about_us_section_one_title' | translate }}</span>
           <p class="f-size-16 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_one_description' | translate }}</p>
         </ion-col>
-        <ion-col size="8" offset="1" class="margin-v-70">
+        <ion-col size="8" offset="1" class="margin-top-70">
           <span class="f-size-32">{{ 'about_us_section_two_title' | translate }}</span>
           <p class="f-size-16 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_two_description' | translate }}</p>
         </ion-col>
-        <ion-col size="8" offset="1" class="margin-v-70">
+        <ion-col size="8" offset="1" class="margin-top-70">
           <span class="f-size-32">{{ 'about_us_section_three_title' | translate }}</span>
           <p class="f-size-16 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_three_description' | translate }}</p>
         </ion-col>
@@ -32,3 +33,8 @@
       <app-footer></app-footer>
   </ion-grid>
 </ion-content>
+}
+
+@if (isMobile) {
+  <app-about-us-mobile></app-about-us-mobile>
+}

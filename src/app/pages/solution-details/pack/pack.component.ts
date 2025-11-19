@@ -1,19 +1,29 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonCol, IonIcon, IonText, IonItem, IonLabel, IonContent } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
+import { PackMobileComponent } from 'src/app/mobile/solutions-mobile/pack-mobile/pack-mobile.component';
 import { IProduct } from 'src/app/models/product.model';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-pack',
   templateUrl: './pack.component.html',
   styleUrls: ['./pack.component.scss'],
-    imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, IonIcon, IonItem, IonLabel, TranslatePipe]
+    imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, IonIcon, IonItem, IonLabel, TranslatePipe, PackMobileComponent]
 })
 export class PackComponent implements OnInit {
   public _solution: IProduct;
+   public isMobile: boolean = false;
 
-  constructor() {
+  constructor(
+    private breakpointObserver: BreakpointObserver, 
+  ) {
     this._solution = {} as IProduct;
+
+    this.breakpointObserver.observe([Breakpoints.Handset])
+      .subscribe(result => {
+        this.isMobile = result.matches;
+    });
   }
 
   ngOnInit() {}

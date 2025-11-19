@@ -4,12 +4,12 @@ import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
 import Splide from '@splidejs/splide';
 
 @Component({
-  selector: 'app-paint-mobile',
-  templateUrl: './paint-mobile.component.html',
-  styleUrls: ['./paint-mobile.component.scss'],
-  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonCol, TranslatePipe]
+  selector: 'app-pack-mobile',
+  templateUrl: './pack-mobile.component.html',
+  styleUrls: ['./pack-mobile.component.scss'],
+  imports: [IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonIcon, IonCol, TranslatePipe]
 })
-export class PaintMobileComponent  implements OnInit, AfterViewInit {
+export class PackMobileComponent  implements OnInit, AfterViewInit {
 
   @ViewChild('mainSplide') mainSplideRef!: ElementRef;
   private splideInstance!: Splide;

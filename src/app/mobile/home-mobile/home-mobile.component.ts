@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonContent, IonButton } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
@@ -8,6 +8,7 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import { IFeature } from 'src/app/models/feature.model';
 import { MenuController } from '@ionic/angular';
 import { SolutionsService } from 'src/app/services/solutions.service';
+import Splide from '@splidejs/splide';
 
 @Component({
   selector: 'app-home-mobile',
@@ -16,16 +17,40 @@ import { SolutionsService } from 'src/app/services/solutions.service';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [IonRow, IonGrid, IonCol, IonIcon, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, IonButton]
 })
-export class HomeMobileComponent  implements OnInit {
+export class HomeMobileComponent  implements OnInit, AfterViewInit {
   private _router = inject(Router);
   public productList: IProduct[] = [];
 
   @ViewChild('content', { static: false }) content!: IonContent;
   @ViewChildren('productCard', { read: ElementRef }) productCards!: QueryList<ElementRef<HTMLElement>>;
+@ViewChild('mainSplide') mainSplideRef!: ElementRef;
+  private splideInstance!: Splide;
   constructor(
     private menuCtrl: MenuController,
     private solutionsService: SolutionsService,
+    private cdr: ChangeDetectorRef
   ) { }
+
+
+ ngAfterViewInit() {
+setTimeout(() => {
+  
+    if (this.productList && this.productList.length > 0) {
+      this.splideInstance = new Splide(
+        this.mainSplideRef.nativeElement,
+        {
+          type: 'loop',
+arrows: false,
+          autoplay: true,
+          interval: 5000, 
+          pauseOnHover: true,
+        }
+      );
+      this.splideInstance.mount();
+this.cdr.detectChanges();
+    }
+}, 0);
+  }
 
   ngOnInit() {
     this.menuCtrl.close('main-menu');
@@ -34,7 +59,9 @@ export class HomeMobileComponent  implements OnInit {
   }
 
   public navigateToSolution(solutionId: number) {
-    return this._router.navigate(['/solutions', solutionId])
+    if ([0, 3, 5].includes(solutionId)) {
+      this._router.navigate(['/solutions', solutionId])
+    }
   }
 
   public navigateToRoute(route: string) {

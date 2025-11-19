@@ -27,9 +27,15 @@
     background-size: cover;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1301px) {
     .background-image-reverse {
-        height: 80vh;
+        height: 65vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+    .background-image-reverse {
+        height: 75vh; // The height for the specific range
     }
 }
 
@@ -329,6 +335,7 @@ ion-col.menu-col {
     width: calc(100% / 3.2);
     height: 400px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .card-container:hover {

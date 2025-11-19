@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, model, NgZone, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, inject, model, NgZone, OnDestroy, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonGrid, IonRow, IonCard, IonCol, IonList, IonItem, IonIcon, IonText, IonLabel, IonButton, IonSelect, IonSelectOption } from '@ionic/angular/standalone';
 import { IProduct } from '../models/product.model';
@@ -18,7 +18,7 @@ import { SeoService } from '../services/seo.service';
 import { Swiper } from 'swiper/types';
 import { SolutionsService } from '../services/solutions.service';
 import { SwiperContainer } from 'swiper/element';
-
+import Splide from '@splidejs/splide';
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
@@ -41,14 +41,18 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
   @ViewChild('content', { static: false }) content!: IonContent;
   @ViewChildren('productCard', { read: ElementRef }) productCards!: QueryList<ElementRef<HTMLElement>>;
   // @ViewChild('solutionSwiper', { static: false }) solutionSwiper!: ElementRef;
-  @ViewChild('solutionSwiper', { static: false }) swiperRef?: ElementRef<SwiperContainer>;
+  // @ViewChild('solutionSwiper', { static: false }) swiperRef?: ElementRef<SwiperContainer>;
+
+@ViewChild('mainSplide') mainSplideRef!: ElementRef;
+  private splideInstance!: Splide;
 
   constructor(
     private ngZone: NgZone,
     private breakpointObserver: BreakpointObserver,
     private menuCtrl: MenuController,
     private solutionsService: SolutionsService,
-    private seoService: SeoService
+    private seoService: SeoService,
+    private cdr: ChangeDetectorRef
   ) {
     addIcons({ chevronForwardOutline, logoFacebook, logoInstagram, mail });
 
@@ -58,7 +62,25 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
     });
   }
 
-  ngAfterViewInit(): void {}
+ ngAfterViewInit() {
+  setTimeout(() => {
+  
+    if (this.productList && this.productList.length > 0) {
+      this.splideInstance = new Splide(
+        this.mainSplideRef.nativeElement,
+        {
+          type: 'loop',
+          arrows: false,
+          autoplay: true,
+          interval: 5000, 
+          pauseOnHover: true,
+        }
+      );
+      this.splideInstance.mount();
+      this.cdr.detectChanges();
+      }
+    }, 0);
+  }
 
   ngOnInit() {
     this.menuCtrl.close('main-menu');
@@ -70,14 +92,7 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
     );
 
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
-
-    
-  setTimeout(() => {
-    this.loadProducts().then(() => {
-      this.initializeSwiperAutoplay();
-    });
-  
-  },100)
+    this.productList = this.solutionsService.getSolutionList();
   }
 
   onScroll(ev: any) {
@@ -108,22 +123,6 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
     return i == 0 ? '0 -200px' : '0';  
   }
 
-  initializeSwiperAutoplay() {
-    setTimeout(() => {
-      if (this.swiperRef?.nativeElement) {
-        
-        this.ngZone.run(() => {
-          const swiper = this.swiperRef!.nativeElement;
-
-          swiper.swiper.params.autoplay = true;
-          
-          swiper.swiper.autoplay.start();
-          console.log("Swiper Autoplay Started Manually!");
-        });
-      }
-    }, 50);
-  }
-
   loadProducts() {
     return new Promise(resolve => {
       this.productList = this.solutionsService.getSolutionList();
@@ -135,6 +134,10 @@ export class FolderPage implements OnInit, AfterViewInit, OnDestroy  {
     this.io?.disconnect();
     this.destroy$.next();
     this.destroy$.complete();
+
+if (this.splideInstance) {
+      this.splideInstance.destroy();
+    }
   }
 
 }

@@ -68,7 +68,30 @@
     animation-delay: 3s;
   }
 
-  .swiper-slide {
+  // .swiper-slide {
+  //   width: 300px;
+  //   animation: scaleOut 0.5s ease forwards;
+
+  //   .product-card-text {
+  //     animation: moveTextDown 0.5s ease forwards;
+  //   }
+  // }
+
+  // .swiper-slide-active {
+  //   animation: scaleIn 0.5s ease forwards;
+  //   opacity: 1;
+
+  //   .product-card-text {
+  //     animation: moveTextUp 0.5s ease forwards;
+  //   }
+  // }
+
+  .splide__list {
+    height: 400px;
+  }
+
+  .splide__slide {
+    height: 100%;
     width: 300px;
     animation: scaleOut 0.5s ease forwards;
 
@@ -77,7 +100,7 @@
     }
   }
 
-  .swiper-slide-active {
+  .splide__slide.is-visible.is-active {
     animation: scaleIn 0.5s ease forwards;
     opacity: 1;
 
@@ -117,21 +140,21 @@
     -webkit-backdrop-filter: blur(1px);
   }
 
-  .swiper-button-next,
-  .swiper-button-prev {
-    /* Change the icon color */
-    color: white !important;
+  // .swiper-button-next,
+  // .swiper-button-prev {
+  //   /* Change the icon color */
+  //   color: white !important;
 
-    /* Add a circular background */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent black */
-    border-radius: 50%;
-    /* Makes it circular */
+  //   /* Add a circular background */
+  //   background-color: rgba(0, 0, 0, 0.5);
+  //   /* Semi-transparent black */
+  //   border-radius: 50%;
+  //   /* Makes it circular */
 
-    /* Change the size of the button area */
-    width: 40px;
-    height: 40px;
-  }
+  //   /* Change the size of the button area */
+  //   width: 40px;
+  //   height: 40px;
+  // }
 
   @keyframes scaleIn {
     0% {
@@ -183,13 +206,13 @@
     }
 
     100% {
-      bottom: 70px;
+      bottom: 80px;
     }
   }
 
   @keyframes moveTextDown {
     0% {
-      bottom: 70px;
+      bottom: 80px;
     }
 
     100% {

@@ -45,7 +45,9 @@ export class SolutionsComponent  implements OnInit {
   }
 
   public navigateToDetails(solutionId: number) {
-    this._router.navigate(['/solutions', solutionId]);
+    if ([0, 3, 5].includes(solutionId)) {
+      this._router.navigate(['/solutions', solutionId]);
+    }
   }
 
   public setBackgroundImage(item: IProduct): string {
