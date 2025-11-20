@@ -4,29 +4,33 @@
         [collapse]="true"
       ></app-navbar>
 
-
       <ion-row style="height: auto;">
-        <ion-col size="10" offset="1" style="margin-top: 100px;">
-          <span style="font-size: 50px;">{{ solution?.name }}</span>
+        <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="10" size-xl="10" offset-xs="0" offset-sm="0" offset-md="0" offset-lg="1" offset-xl="1" style="margin-top: 100px;">
+          <span class="f-size-50">{{ solution.name }}</span>
         </ion-col>
-      </ion-row>
-@switch (solution?.name) {
-  @case ('Pack') {
-    
-      <ion-row class="background-image" style="height: auto; margin-top: 70px;">
-          <ion-col size="10" offset="1" style="text-align: center; font-size: 32px; font-family: RobotoBold, sans-serif; margin-top: 70px;">
-            <span>{{ 'long_live_food' | translate}}</span>
-          </ion-col>
       </ion-row>
 
-      <ion-row style="height: auto; margin-top: 70px;">
-        <ion-col>
-          <span>{{ 'compare' | translate}}</span>
-        </ion-col>
-      </ion-row>
+@switch (solution.id) {
+  @case (0) {
+    <app-paint [solution]="solution"></app-paint>
   }
-  @case ('Paint') {
-    Case B.
+  @case (1) {
+
+  }
+  @case (2) {
+
+  }
+  @case (3) {
+    <app-pack [solution]="solution"></app-pack>
+  }
+  @case (4) {
+
+  }
+  @case (5) {
+    <app-beauty [solution]="solution"></app-beauty>
+  }
+  @case (6) {
+
   }
   @default {
     Default case.

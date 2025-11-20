@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true" #content >
+  <ion-grid>
+      <app-navbar
+        [collapse]="true"
+      ></app-navbar>
+
+      <ion-row class="h-auto">
+        <ion-col size="10" offset="1" style="margin-top: 100px;">
+          <span class="f-size-50">{{ 'about_us' | translate }}</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="h-auto margin-top-70">
+        <ion-col size="10" offset="1">
+          <span class="f-size-32">{{ 'about_us_section_one_title' | translate }}</span>
+          <p class="f-size-14 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_one_description' | translate }}</p>
+        </ion-col>
+        <ion-col size="10" offset="1" class="margin-top-70">
+          <span class="f-size-32">{{ 'about_us_section_two_title' | translate }}</span>
+          <p class="f-size-14 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_two_description' | translate }}</p>
+        </ion-col>
+        <ion-col size="10" offset="1" class="margin-top-70">
+          <span class="f-size-32">{{ 'about_us_section_three_title' | translate }}</span>
+          <p class="f-size-14 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_three_description' | translate }}</p>
+        </ion-col>
+        <ion-col size="10" offset="1" class="margin-top-70">
+          <span class="f-size-32">{{ 'about_us_section_four_title' | translate }}</span>
+          <p class="f-size-14 l-height" style="font-family: Arial, Helvetica, sans-serif;">{{ 'about_us_section_four_description' | translate }}</p>
+        </ion-col>
+      </ion-row>
+
+      <app-footer></app-footer>
+  </ion-grid>
+</ion-content>

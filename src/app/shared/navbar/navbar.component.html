@@ -1,6 +1,6 @@
  <div style="position: fixed; top: 0; z-index: 999;">
 <ion-row class="top-navbar-line">
-  <ion-col size="12" style="height: 100%; background-color: #006D70">
+  <ion-col size="12" style="height: 100%; background-color: #064E5A"> <!-- #006D70 -->
   </ion-col>
 </ion-row>
 <div class="navbar-container" [class]="{'collapsed': collapse == true}">
@@ -10,7 +10,7 @@
         <img src="./assets/logo/main-logo.png" alt="">
       </div>
       <div class="navbar-routes-container" [class]="{'collapsed': collapse == true}">
-        @for (route of routeList; track route; let i =$index) {
+        @for (route of routeList; track route.id; let i =$index) {
         <div class="navbar-route-button navbar-link" (click)="navigateToRoute(route)">
           <div class="navbar-route-button-text">
             {{ route.i18n | translate}}
@@ -20,18 +20,18 @@
       </div>
       <div class="navbar-right-content-wrapper" [class]="{'collapsed': collapse == true}">
         <div class="navbar-right-content">
-          <div class="navbar-right-content-button">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </div>
-          <div class="navbar-right-content-button">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </div>
-          <div class="navbar-right-content-button">
+          <div class="navbar-right-content-button" (click)="navigateToRoute(routeList[4])">
             <ion-icon name="mail"></ion-icon>
+          </div>
+          <div class="navbar-right-content-button" (click)="navigateToRoute(routeList[4])">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </div>
+          <div class="navbar-right-content-button" (click)="navigateToRoute(routeList[4])">
+            <ion-icon name="globe-outline"></ion-icon>
           </div>
           <div class="navbar-right-content-button">
             <ion-select [value]="getCurrentLang()" (ionChange)="setLang($event)" color="light" toggleIcon="chevron-down-outline">
-              @for(lang of languagesAvailable; track languagesAvailable; let i = $index) {
+              @for(lang of languagesAvailable; track lang.id; let i = $index) {
               <ion-select-option [value]="lang.code">{{ lang.description }}</ion-select-option>
               }
             </ion-select>

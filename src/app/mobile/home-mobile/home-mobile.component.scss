@@ -1,0 +1,220 @@
+:host {
+    ion-menu-button {
+        color: var(--ion-color-primary);
+    }
+
+    #container {
+        text-align: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #container strong {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    #container p {
+        font-size: 16px;
+        line-height: 22px;
+        color: #8c8c8c;
+        margin: 0;
+    }
+
+    #container a {
+        text-decoration: none;
+    }
+
+    // .slogan_text_first {
+    //     font-size: 48px;
+    //     // font-family: WorkSansRegular, sans-serif;
+    //     // color: #36887D;
+    //     color: #006D70;
+    //     // color: #004958;
+    //     text-shadow: 2px 2px 32px #fff;
+    //     opacity: 0;
+    //     animation: textFadeIn 3s ease forwards;
+    // }
+    .slogan_text_first {
+        // font-size: 48px;
+        // color: #36887D;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: url('../../../assets/images/bg-33.jpeg');
+        background-clip: text;
+        background-size: 150%;
+        text-shadow: 2px 2px 32px #fff;
+        opacity: 0;
+        // animation: textFadeIn 3s ease forwards;
+        animation: textFadeIn 20s infinite, animateBgImage 40s infinite linear;
+    }
+
+    // .slogan_text_second {
+    //     font-size: 48px;
+    //     // font-family: CaveatBold, sans-serif;
+    //     color: #36887D;
+    //     text-shadow: 2px 2px 32px #fff;
+    //     opacity: 0;
+    //     animation: textFadeIn 3s ease forwards;
+    //     animation-delay: 2s;
+    // }
+
+    .slogan_text_second {
+        // font-size: 48px;
+        // color: #36887D;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-image: url('../../../assets/images/bg-33.jpeg');
+        background-clip: text;
+        background-size: 150%;
+        text-shadow: 2px 2px 32px #fff;
+        opacity: 0;
+        // animation: textFadeIn 3s ease forwards;
+        animation: textFadeIn 20s infinite, animateBgImage 40s infinite linear;
+        animation-delay: 3s;
+    }
+
+    @keyframes textFadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes animateBgImage {
+        0% {
+            background-position: 0 50%;
+        }
+
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .splide__list {
+        height: 400px;
+    }
+
+    .splide__slide {
+        height: 100%;
+        width: 300px;
+        // animation: scaleOut 0.5s ease forwards;
+
+        .product-card-text {
+            animation: moveTextDown 0.5s ease forwards;
+        }
+    }
+
+    .splide__slide.is-visible.is-active {
+        // animation: scaleIn 0.5s ease forwards;
+        opacity: 1;
+
+        .product-card-text {
+            animation: moveTextUp 0.5s ease forwards;
+        }
+    }
+
+    .product-card-box {
+        height: 100%;
+        width: 100%;
+        margin: 50px 0;
+        border-radius: 10px;
+        background-color: #D5F5F1;
+        background-size: cover;
+        position: relative;
+    }
+
+    .product-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+    }
+
+    .product-card-text {
+        width: 100%;
+        padding: 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // background: rgba(255, 255, 255, 0.6);
+        background: rgb(54, 136, 125, 0.6);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+    }
+
+    @keyframes scaleIn {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes scaleOut {
+        0% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes textFadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes animateBgImage {
+        0% {
+            background-position: 0 50%;
+        }
+
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+
+    @keyframes moveTextUp {
+        0% {
+            bottom: 0;
+        }
+
+        100% {
+            bottom: 50px;
+        }
+    }
+
+    @keyframes moveTextDown {
+        0% {
+            bottom: 50px;
+        }
+
+        100% {
+            bottom: 0;
+        }
+    }
+
+}

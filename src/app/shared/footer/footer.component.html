@@ -1,4 +1,4 @@
-<ion-row class="footer-row" style="background-color: #006D70; color: #FFF; font-family: RobotoCustom, sans-serif;">
+<ion-row class="footer-row">
   <ion-col size-xs="12" size-sm="12" size-md="4" size-lg="4" size-xl="4" offset="1" style="height: 100px; padding: 30px 0;">
     <div class="footer-logo">
       <img src="./assets/logo/main-logo.png" alt="">
@@ -15,10 +15,12 @@
       <div style="padding: 22px 0; font-family: NotoSans, sans-serif;">
         <ion-label color="light" style="font-size: 16px; text-transform: uppercase;">{{ 'site_map' | translate }}</ion-label>
       </div>
-        @for (route of routeList; track route; let i =$index) {
+        @if (routeList) {
+        @for (route of routeList; track route.id; let i =$index) {
         <div style="padding: 5px 0; cursor: pointer;" (click)="navigateToRoute(route)">
           <ion-label color="light" style="font-size: 12px">{{ route.i18n | translate }}</ion-label>
         </div>
+        }
         }
     </ion-list>
   </ion-col>

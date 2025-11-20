@@ -3,4 +3,5 @@ export interface IProduct {
  name: string;
  mainDescription: string;
  description: string;
+ image?: string;
 }

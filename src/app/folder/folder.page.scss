@@ -27,4 +27,206 @@
   #container a {
     text-decoration: none;
   }
+
+  .slogan_text_first {
+    // font-size: 65px;
+    // color: #36887D;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: transparent;
+    // background-image: url('../../assets/images/bg-7.jpg');
+    background-image: url('../../assets/images/bg-33.jpeg');
+    background-clip: text;
+    background-size: 150%;
+    // text-shadow: 2px 2px 32px #fff;
+    opacity: 0;
+    // animation: textFadeIn 3s ease forwards;
+    animation: textFadeIn 20s infinite, animateBgImage 40s infinite linear;
+  }
+
+  // .slogan_text_second {
+  //   // font-size: 65px; // 75px*
+  //   color: #36887D;
+  //   text-shadow: 2px 2px 32px #fff;
+  //   opacity: 0;
+  //   animation: textFadeIn 3s ease forwards;
+  //   animation-delay: 2s;
+  // }
+
+  .slogan_text_second {
+    // font-size: 65px; // 75px*
+    // color: #36887D;
+    // text-shadow: 2px 2px 32px #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: url('../../assets/images/bg-33.jpeg');
+    background-clip: text;
+    background-size: 150%;
+    opacity: 0;
+    animation: textFadeIn 20s infinite, animateBgImage 40s infinite linear;
+    animation-delay: 3s;
+  }
+
+  // .swiper-slide {
+  //   width: 300px;
+  //   animation: scaleOut 0.5s ease forwards;
+
+  //   .product-card-text {
+  //     animation: moveTextDown 0.5s ease forwards;
+  //   }
+  // }
+
+  // .swiper-slide-active {
+  //   animation: scaleIn 0.5s ease forwards;
+  //   opacity: 1;
+
+  //   .product-card-text {
+  //     animation: moveTextUp 0.5s ease forwards;
+  //   }
+  // }
+
+  .splide__list {
+    height: 400px;
+  }
+
+  .splide__slide {
+    height: 100%;
+    width: 300px;
+    animation: scaleOut 0.5s ease forwards;
+
+    .product-card-text {
+      animation: moveTextDown 0.5s ease forwards;
+    }
+  }
+
+  .splide__slide.is-visible.is-active {
+    animation: scaleIn 0.5s ease forwards;
+    opacity: 1;
+
+    .product-card-text {
+      animation: moveTextUp 0.5s ease forwards;
+    }
+  }
+
+  .product-card-box {
+    height: 100%;
+    width: 100%;
+    margin: 50px 0;
+    border-radius: 10px;
+    background-color: #D5F5F1;
+    background-size: cover;
+    position: relative;
+  }
+
+  .product-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+  }
+
+  .product-card-text {
+    width: 100%;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    // background: rgba(255, 255, 255, 0.6);
+    background: rgb(54, 136, 125, 0.6);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+  }
+
+  // .swiper-button-next,
+  // .swiper-button-prev {
+  //   /* Change the icon color */
+  //   color: white !important;
+
+  //   /* Add a circular background */
+  //   background-color: rgba(0, 0, 0, 0.5);
+  //   /* Semi-transparent black */
+  //   border-radius: 50%;
+  //   /* Makes it circular */
+
+  //   /* Change the size of the button area */
+  //   width: 40px;
+  //   height: 40px;
+  // }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes scaleOut {
+    0% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes textFadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes animateBgImage {
+    0% {
+      background-position: 0 50%;
+    }
+
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes moveTextUp {
+    0% {
+      bottom: 0;
+    }
+
+    100% {
+      bottom: 80px;
+    }
+  }
+
+  @keyframes moveTextDown {
+    0% {
+      bottom: 80px;
+    }
+
+    100% {
+      bottom: 0;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    .slogan_text_first {
+      font-size: 66px;
+    }
+
+    .slogan_text_second {
+      font-size: 66px;
+    }
+  }
 }

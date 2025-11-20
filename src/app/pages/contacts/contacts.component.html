@@ -4,22 +4,63 @@
         [collapse]="true"
       ></app-navbar>
 
-
-      <ion-row>
+      <ion-row style="height: auto;">
         <ion-col size="10" offset="1" style="margin-top: 100px;">
-          <span style="font-size: 50px;">{{ 'contacts' | translate }}</span>
-          <p style="line-height: 30px;">
-            Tel: +41 61 324 11 11
-            (Switzerland)
-            <br>
-            Monday - Friday
-            8:30 a.m. - 5:00 p.m. GMT+1
-            <br>
-            Mail: xxxxxx@xxxx.com
-          </p>
+          <span class="f-size-50">{{ 'contacts' | translate }}</span>
         </ion-col>
       </ion-row>
 
+      <ion-row class="margin-v-70" style="height: auto;">
+        <ion-col size-xs="10" size-sm="10" size-md="8" size-lg="7" size-xl="7" offset="1">
+          <div>
+            <p class="f-size-12 text-uppercase" style="font-family: RobotoBold, sans-serif;">{{ 'always_on' | translate }}</p>
+          </div>
+          <div>
+            <span class="f-size-32">{{ 'contacts_page_section_one_title' | translate }}</span>
+            <p class="f-size-16 l-height" style="font-family: RobotoCustom, sans-serif;">{{ 'contacts_page_section_one_description' | translate }}</p>
+          </div>
+      </ion-col>
+      </ion-row>
+      <ion-row class="h-auto">
+      <!-- Phone number -->
+      <ion-col size-xs="10" size-sm="10" size-md="5" size-lg="5" size-xl="4" offset="1" style="height: 70px;">
+        <ion-row>
+          <ion-col size-xs="3" size-sm="2" size-md="3" size-lg="2" size-xl="2" class="bg-green contact-card-icon">
+          <ion-icon name="call-outline" color="light" size="large"></ion-icon>
+        </ion-col>
+        <ion-col size-xs="9" size-sm="10" size-md="9" size-lg="10" size-xl="10" class="padding-l-20 contact-card-text">
+          Tel: +41-764297640 (Switzerland)
+        </ion-col>
+        </ion-row>
+      </ion-col>
+</ion-row>
+
+<!-- Opening hours -->    
+<ion-row class="h-auto">
+<ion-col size-xs="10" size-sm="10" size-md="5" size-lg="5" size-xl="4" offset="1" class="contact-card" style="height: 70px;">
+        <ion-row>
+          <ion-col size-xs="3" size-sm="2" size-md="3" size-lg="2" size-xl="2" class="bg-green contact-card-icon">
+            <ion-icon name="logo-whatsapp" color="light" size="large"></ion-icon>
+          </ion-col>
+        <ion-col size-xs="9" size-sm="10" size-md="9" size-lg="10" size-xl="10" class="padding-l-20 contact-card-text">
+          Whatsapp: +41-764297640
+        </ion-col>
+        </ion-row>
+      </ion-col>
+</ion-row>  
+<!-- Mail -->
+<ion-row class="h-auto" style="margin-bottom: 70px;">
+<ion-col size-xs="10" size-sm="10" size-md="5" size-lg="5" size-xl="4" offset="1" style="height: 70px;">
+        <ion-row>
+          <ion-col size-xs="3" size-sm="2" size-md="3" size-lg="2" size-xl="2" class="bg-green contact-card-icon">
+          <ion-icon name="mail-outline" color="light" size="large"></ion-icon>
+        </ion-col>
+        <ion-col size-xs="9" size-sm="10" size-md="9" size-lg="10" size-xl="10" class="padding-l-20 contact-card-text">
+          Mail: info.lolipaint@gmail.com
+        </ion-col>
+        </ion-row>
+      </ion-col>
+</ion-row>
 
       <app-footer></app-footer>
   </ion-grid>  

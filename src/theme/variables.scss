@@ -16,13 +16,27 @@
 
 .background-image-reverse {
     width: 100vw;
-    height: 100%;
+    height: 90vh;
     background: url(../assets/images/bg-00.png) 0 0/100% 100% no-repeat;
+    border-bottom: 5px solid #064E5A;
 }
 
 .background-image-reverse.mobile {
+    height: 70vh;
     background: url(../assets/images/bg-00.png);
     background-size: cover;
+}
+
+@media (min-width: 1301px) {
+    .background-image-reverse {
+        height: 65vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+    .background-image-reverse {
+        height: 75vh; // The height for the specific range
+    }
 }
 
 ion-item {
@@ -35,18 +49,11 @@ ion-item {
 
 .glossy-box {
     background: rgba(255, 255, 255, 0.6);
-    /* white with transparency */
     backdrop-filter: blur(4px);
-    /* blur background behind */
     -webkit-backdrop-filter: blur(4px);
-    /* Safari support */
     border-radius: 10px;
-    // padding: 2rem;
     max-width: 400px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    // color: #000;
-    /* text stays sharp */
-    // text-align: center;
 }
 
 .logo {
@@ -56,7 +63,6 @@ ion-item {
 
 .logo .brand {
     font-family: 'Arvo', serif;
-    /* slab serif */
     position: relative;
     padding-bottom: 0.2em;
 }
@@ -70,7 +76,6 @@ ion-item {
     height: 0.25em;
     background: white;
     border-radius: 4px;
-    /* makes it rounded underline */
 }
 
 .logo .tagline {
@@ -80,52 +85,8 @@ ion-item {
     color: #3D998E
 }
 
-.product-card-box {
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    margin: 50px 0;
-    border-radius: 0px;
-    //background: url(../assets/images/trama_chimica_1.png); // #B0C3BF;
-    background-color: #D5F5F1;
-    background-size: cover;
-
-    position: relative;
-
-    // transition: background 0.35s ease, color 0.35s ease, transform 0.35s;
-
-    // &.active {
-    //     background: teal;
-    //     color: #fff;
-    //     transform: translateY(-4px);
-    // }
-}
-
-.product-card {
-    width: 100%;
-    height: 30%;
-    padding: 20px;
-    // border: 1px solid;
-    position: absolute;
-    top: 0;
-    left: 0;
-    // background-color: #FFF;
-    border-radius: 0px;
-
-    // Glossy effects
-    background: rgba(255, 255, 255, 0.6);
-    /* white with transparency */
-    backdrop-filter: blur(2px);
-    /* blur background behind */
-    -webkit-backdrop-filter: blur(2px);
-}
-
 .product-card.open {
-    animation: openAnimation 0.5s ease forwards; // <- forwards keeps 100% width
-}
-
-.product-card-text {
-    color: #000;
+    animation: openAnimation 0.5s ease forwards;
 }
 
 .product-card.close {
@@ -151,51 +112,6 @@ ion-item {
         height: 30%;
     }
 }
-
-// @keyframes fadeInAnimation {
-//     0% {
-//         visibility: hidden;
-//     }
-
-//     100% {
-//         visibility: visible;
-//     }
-// }
-
-
-// .product-card {
-//     transition: background 0.35s ease, color 0.35s ease, transform 0.35s;
-//     background: #fff;
-//     color: #222;
-//     padding: 16px;
-//     margin: 12px 0;
-//     min-height: 140px;
-//     /* make sure cards have height so intersection is detected */
-//     display: block;
-//     border-radius: 8px;
-//     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-
-//     &.active {
-//         background: teal;
-//         color: #fff;
-//         transform: translateY(-4px);
-//     }
-// }
-
-// .list-btn {
-//     // width: 100%;
-//     // border: 1px #fff;
-//     // border-radius: 6px;
-//     font-size: 30px;
-//     display: flex;
-//     flex-direction: column;
-//     /* stack vertically */
-//     // margin: 20px 0;
-//     // --background: transparent;
-//     // --color: #3D998E;
-//     // font-weight: bold;
-//     // font-family: 'NotoSerif', serif;
-// }
 
 ion-content,
 ion-grid,
@@ -264,9 +180,9 @@ ion-col.menu-col {
     height: auto;
     // background-color: transparent;
     // background: rgba(26, 136, 126, 0.6);
-    background: linear-gradient(to bottom, rgba(26, 136, 126, 0.6), transparent);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: linear-gradient(to bottom, #36887D, transparent); // rgba(26, 136, 126, 0.6)
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 }
 
 .navbar-logo {
@@ -363,7 +279,7 @@ ion-col.menu-col {
 }
 
 .navbar-container.collapsed {
-    background: rgba(26, 136, 126, 0.6);
+    background: rgba(26, 136, 126, 0.6); // #006D70 #689B97
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(2px);
 }
@@ -419,6 +335,7 @@ ion-col.menu-col {
     width: calc(100% / 3.2);
     height: 400px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .card-container:hover {
@@ -442,7 +359,6 @@ ion-col.menu-col {
 }
 
 .card-title {
-    font-size: 22px;
     color: #0d5952;
     font-family: NotoSansBold, sans-serif;
 }
@@ -462,10 +378,4 @@ ion-col.menu-col {
 
 ion-menu {
     --min-width: 90%;
-    // --ion-background-color: rgba(26, 136, 126, 0.1);
-    // --ion-text-color: #FFF;
-
-    // ion-list {
-    //     --ion-background-color: rgba(26, 136, 126, 0.1);
-    // }
 }

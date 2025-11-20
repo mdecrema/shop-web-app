@@ -6,27 +6,26 @@
       ></app-navbar>
 
 
-      <ion-row style="height: auto;">
+      <ion-row class="h-auto">
         <ion-col size="10" offset="1" style="margin-top: 100px;">
-          <span style="font-size: 50px;">{{ 'innovation' | translate }}</span>
+          <span class="f-size-50">{{ 'innovation' | translate }}</span>
           <!-- <p style="font-size: 20px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </p> -->
         </ion-col>
       </ion-row>
 
-      <ion-row style="height: auto; margin-top: 70px;">
+      <ion-row class="h-auto margin-top-70">
         <ion-col size="10" offset="1" style="display: flex; flex-direction: row;">
           <div style="width: 80%; height: 100%; padding-right: 30px; display: flex; flex-direction: column; justify-content: center;">
             <div>
-            <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'scientific_foundation' | translate}}</p>
-            <span style=" font-size: 32px;">{{ 'Polimeri funzionali' | translate}}</span>
-            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 20px;">
-                Le soluzioni si basano su estratti polimerici capaci di funzionare come agenti legati, addensanti, filmanti ed inclusivi. Questi estratti sono completamente naturali, biodegradabili ed addirittura edibili.
+            <p class="f-size-12 text-uppercase" style="font-family: RobotoBold, sans-serif;">{{ 'scientific_foundation' | translate}}</p>
+            <span class="f-size-32">{{ 'innovation_page_section_one_title' | translate}}</span>
+            <p class="f-size-16 l-height" style="font-family: Arial, Helvetica, sans-serif; margin-top: 20px;">
+                {{ 'innovation_page_section_one_description_one' | translate }}
               <br>
               <br>
-              La ricerca scientifica svolta negli anni ha portato alla scoperta delle innumerevoli proprietà di questi estratti e alla loro versatilità di applicazione. 
-Possono essere una efficace alternativa alla plastica e a numerose altre sostanze di sintesi. Alcune di queste applicazioni sono già un successo planetario!
+                {{ 'innovation_page_section_one_description_two' | translate }}
             </p>
           </div> 
           </div>
@@ -36,13 +35,13 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
         </ion-col>
       </ion-row>
 
-      <ion-row style="height: auto; background: linear-gradient(to bottom, #F0EFEA, #fff); margin-top: 70px;">
-        <ion-col size="10" offset="1" style="text-align: center; font-size: 38px; font-family: RobotoBold, sans-serif; margin-top: 70px;">
-          <span>POLIMERI <span class="text-main-green">NON-TERRESTRI</span></span>
+      <ion-row class="h-auto margin-top-70" style="background: linear-gradient(to bottom, #F0EFEA, #fff);"> <!-- #ACBFBD -->
+        <ion-col size="10" offset="1" class="f-size-38 f-family-roboto" style="text-align: center; margin-top: 70px;">
+          <span>{{ 'polymers' | translate }} <span class="text-main-green">{{ 'non_terrestrial' | translate }}</span></span>
         </ion-col>
 
         <ion-col size-xs="10" size-sm="10" size-md="6" size-lg="6" size-xl="6" offset-xs="1" offset-sm="1" offset-md="3" offset-lg="3" offset-xl="3" style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 20px;">
-          Questi biopolimeri vengono estratti da diverse specie vegetali non terrestri ed opportunamente impiegati per esigenze specifiche. Utilizzati puri, in mescola fra loro od in combinazione con altre sostanze, si possono  ottenere soluzioni utili sia per sostituire materiali e sostanze convenzionali, sia per creare nuove opportunità d’impiego. 
+          {{ 'innovation_page_section_two_description' | translate }}
         </ion-col>
 
         <ion-col size="10" offset="1" style="min-height: 400px; margin-top: 50px;">
@@ -50,7 +49,7 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
             <!-- Left Box -->
             <ion-col size="4" style="display: flex; flex-direction: column; justify-content: center;">
               <div style="padding: 0 30px;">
-                @for (feature of featureList; track feature; let i = $index) {
+                @for (feature of featureList; track feature.id; let i = $index) {
                 <div class="list-item" [class]="{'active': feature.active, 'text-main-green': feature.active}" (click)="setFeatureActive(feature.id)">
                   <span>{{ feature.title | translate }}</span>
                 </div>
@@ -69,7 +68,7 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
                   </div>
                   <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 30px;">{{ getFeatureActiveDescription() | translate}}</p>
                   <ion-button fill="clear" class="btn-custom" (click)="navigateToRoute('/solutions')">
-                    <ion-label class="text-main-green">Le nostre soluzioni</ion-label>
+                    <ion-label class="text-main-green">{{ 'our_solutions' | translate }}</ion-label>
                     <ion-icon slot="end" name="chevron-forward-outline" class="text-main-green"></ion-icon>
                   </ion-button>
               </div>
@@ -97,30 +96,26 @@ Possono essere una efficace alternativa alla plastica e a numerose altre sostanz
               <div style="width: 30%; text-align: center;">
                 <span style="font-size: 20px; text-transform: uppercase; color: #1C8C82">{{ 'versatility' | translate}}</span>
                 <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; text-align: justify; line-height: 1.4;">
-                 Polimeri molto versatili, che si prestano a numerose applicazioni nei settori piu’ disparati.
-All’interno dello stesso settore applicativo si puo’ facilmente modularne l’uso come materiale singolo o in combinazione con altri polimeri e/o additivi. 
-Si puo’ anche variarne la viscosità, la rigidità, la trasparenza, l’allungamento, ecc.
+                  {{ 'innovation_page_box_one_description' | translate }}
                 </p>
               </div>
             <div style="width: 30%; text-align: center;">
                 <span style="font-size: 20px; text-transform: uppercase; color: #1C8C82">{{ 'scalable' | translate}}</span>
                 <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; text-align: justify; line-height: 1.4;">
-                 Sono facilmente scalabili e si adattano ad essere processati con macchinari convenzionali. 
-Si prestano bene alle diverse esigenze tecnologiche: casting system, termosaldatura, dip-coating, spray coating, brush coating, laminazione, estrusione, ecc.
+                  {{ 'innovation_page_box_two_description' | translate }}
                 </p>
               </div>
             <div style="width: 30%; text-align: center;">
                 <span style="font-size: 20px; text-transform: uppercase; color: #1C8C82">{{ 'competitive' | translate }}</span>
                 <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; text-align: justify; line-height: 1.4;">
-                 La versatilità unita alla scalabilità rende queste sostanze piuttosto competitive sul mercato. 
-Le basse quantità necessarie per ottenere buoni risultati, sono un ulteriore benefit.
+                 {{ 'innovation_page_box_three_description' | translate }}
                 </p>
               </div>
           </div>
         </ion-col>
       </ion-row>
 
-      <ion-row style="height: auto; margin-top: 70px;">
+      <ion-row class="h-auto margin-v-70">
         <ion-col size="10" offset="1" style="height: 400px; display: flex; flex-direction: row;">
           <div style="width: 20%; height: 100%; overflow: hidden; text-align: right;">
             <img src="./assets/images/seaweed-9.png" alt="" style="width: 100%; height: 100%;">
@@ -130,19 +125,17 @@ Le basse quantità necessarie per ottenere buoni risultati, sono un ulteriore be
             <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'benefits' | translate}}</p>
             <span style=" font-size: 32px;">{{ 'benefits_env_health' | translate}}</span>
             <p style="font-family: RobotoCustom, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 20px;">
-                Questi estratti sono completamente naturali, provenienti da una materia prima che sequestra enormi quantità di anidride carbonica e restituisce altrettante quantità di ossigeno. La crescita rapida facilita l’approvvigionamento, non compete in nessun modo con le risorse alimentari umane, non necessita ne di fertilizzazione ne di antiparassitari. Anzi, questa stessa materia prima si presta ad essere un valido fertilizzante per le piante in agricoltura in quanto biodegradabile.
-
+                {{ 'innovation_page_section_three_description_one' | translate}}
               <br>
               <br>
-              Molti sono anche i possibili benefici sulla salute: numerosi studi mettono in luce le proprietà riparatrici, lenitive, anti-riflusso e antiossidanti che questi estratti hanno. Questo li rende infatti già usati in ambito sia cosmetico e alimentare, sia farmaceutico e medicale. 
-Insomma, un vero e proprio tesoro nascosto che necessita di essere scoperto e opportunamente valorizzato. 
+                {{ 'innovation_page_section_three_description_two' | translate}}
             </p>
           </div> 
           </div>
         </ion-col>
       </ion-row>
 
-      <ion-row style="height: auto;">
+      <!-- <ion-row style="height: auto;">
         <ion-col size="5" offset="1">
           <div style="width: 100%; height: 400px;">
 
@@ -153,7 +146,7 @@ Insomma, un vero e proprio tesoro nascosto che necessita di essere scoperto e op
            
           </div>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
 
       <app-footer></app-footer>
   </ion-grid>  

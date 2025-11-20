@@ -1,0 +1,93 @@
+ @if (!isMobile) {
+<ion-row  style="height: auto; margin-top: 70px;">
+        <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/hamburger.png); background-size: cover; background-repeat: no-repeat;" offset="1">
+
+        </ion-col>
+        <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/film-1.jpg); background-size: cover; background-repeat: no-repeat;">
+
+        </ion-col>
+        <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/avocado.png); background-size: cover; background-repeat: no-repeat; ">
+        </ion-col>
+        <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/cosmetic-3.jpg); background-size: cover; background-repeat: no-repeat; background-position: 0 -80px;">
+
+        </ion-col>
+        <!-- <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/color-pouring.jpg); background-size: cover; background-repeat: no-repeat;">
+
+        </ion-col> -->
+      </ion-row>
+
+      <ion-row style="height: auto; margin-top: 70px;">
+        <ion-col size="10" offset="1" style="padding: 10px 0; position: relative;">
+          <div class="padding-v-30" style="display: flex; flex-direction: row; justify-content: space-between;"> 
+            
+            <div style="width: 45%; float: left;">
+              <p class="f-size-50">
+                <span style="color: #1C8B81;">{{ 'pack_section_one_title_one' | translate }}</span> {{ 'pack_section_one_title_two' | translate }} 
+              </p>
+            </div>
+            <div style="width: 45%; float: left; margin-top: 50px;">
+              <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
+              <p class="f-size-16" style="font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+                {{ 'pack_section_one_description_one' | translate }}
+            </p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!-- PROVA 1 -->
+      <ion-row style="height: auto; margin-top: 70px; background: linear-gradient(to bottom, #F0EFEA, #fff); padding-top: 30px;">
+       
+        <ion-col size="10" offset="1">
+          <ion-row>
+            <ion-col size="2" class="bg-green" style="height: 200px; border: 1px solid #1C8B81; display: flex; flex-direction: row; justify-content: center; align-self: center; align-items: center;">
+            <div>
+              <ion-icon slot="start" size="large" name="add-outline" color="light" style="transform: scale(3);"></ion-icon>
+            </div>
+            </ion-col>
+            <ion-col size="4" class="padding-l-30" style="height: 100%; border: 1px solid; border-left: none; display: flex; flex-direction: column; justify-content: space-around;">
+              <span class="text-black f-size-22 text-uppercase" style="font-family: Arial, Helvetica, sans-serif;">{{ 'shelf_life' | translate }}</span>
+              <span class="text-black f-size-22 text-uppercase" style="font-family: Arial, Helvetica, sans-serif;">{{ 'healthiness' | translate }}</span>
+            </ion-col>
+            <ion-col size="2" class="bg-dark" style="height: 200px; border: 1px solid #004958; display: flex; flex-direction: row; justify-content: center; align-self: center; align-items: center;">
+              <div>
+                <ion-icon slot="start" size="large" name="remove-outline" color="light" style="transform: scale(3);"></ion-icon>               
+              </div>
+            </ion-col>  
+            <ion-col size="4" class="padding-l-30" style="height: 100%; border: 1px solid; border-left: none; display: flex; flex-direction: column; justify-content: space-around;">
+              <span class="text-black f-size-22 text-uppercase" style="font-family: Arial, Helvetica, sans-serif;">{{ 'aging_and_wastes' | translate }}</span>
+              <span class="text-black f-size-22 text-uppercase" style="font-family: Arial, Helvetica, sans-serif;">{{ 'oxidation_and_contaminations' | translate }}</span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row style="height: auto; margin-top: 70px;">
+        <ion-col size="10" offset="1" style="padding: 10px 0; position: relative;">
+          <div style="display: flex; flex-direction: row; justify-content: space-between;"> 
+            <div style="width: 45%; float: left;">
+              <p class="f-size-50">
+                <span>{{ 'vegan_and_natural' | translate }}</span>
+                <br>
+                <span style="color: #1C8B81;">{{ 'plastic_free' | translate }}</span>
+                <br>
+                <span>{{ 'biodegradable' | translate }}</span>
+                <br>
+                <span style="color: #1C8B81;">{{ 'edible' | translate }}</span>
+              </p>
+            </div>
+            <div style="width: 45%; float: left;">
+              <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
+              <p class="padding-l-30" style="font-family: RobotoCustom, sans-serif; line-height: 1.5; font-size: 150px; color: #1C8B81; text-align: right;">
+                {{ '100%' | translate }}
+              </p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+}
+
+ @if (isMobile) {
+  <app-pack-mobile></app-pack-mobile>
+ }

@@ -9,7 +9,7 @@ import { MenuController } from '@ionic/angular';
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],
-  imports: [IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, NavbarComponent, FooterComponent, IonContent, TranslatePipe, TranslateDirective, ]
+  imports: [IonRow, IonGrid, IonCol, IonIcon, NavbarComponent, FooterComponent, IonContent, TranslatePipe]
 })
 export class ContactsComponent  implements OnInit {
 
