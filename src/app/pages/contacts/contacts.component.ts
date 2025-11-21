@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { IonRow, IonCard, IonGrid, IonCol, IonIcon, IonText, IonLabel, IonContent } from '@ionic/angular/standalone';
 import { TranslatePipe, TranslateDirective} from "@ngx-translate/core";
@@ -12,10 +13,18 @@ import { MenuController } from '@ionic/angular';
   imports: [IonRow, IonGrid, IonCol, IonIcon, NavbarComponent, FooterComponent, IonContent, TranslatePipe]
 })
 export class ContactsComponent  implements OnInit {
+   public isMobile: boolean = false;
 
   constructor(
-    private menuCtrl: MenuController
-  ) { }
+    private menuCtrl: MenuController,
+     private breakpointObserver: BreakpointObserver,  
+  ) { 
+    
+     this.breakpointObserver.observe([Breakpoints.Handset])
+      .subscribe(result => {
+        this.isMobile = result.matches;
+    });
+  }
 
   ngOnInit() {
     this.menuCtrl.close('main-menu');

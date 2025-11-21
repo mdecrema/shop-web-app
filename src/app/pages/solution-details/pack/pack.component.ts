@@ -13,7 +13,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class PackComponent implements OnInit {
   public _solution: IProduct;
-   public isMobile: boolean = false;
+  public isMobile: boolean = false;
 
   constructor(
     private breakpointObserver: BreakpointObserver, 

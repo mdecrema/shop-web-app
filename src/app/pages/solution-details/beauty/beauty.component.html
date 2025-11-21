@@ -1,3 +1,4 @@
+@if (!isMobile) {
 <ion-row  style="height: auto; margin-top: 70px;">
         <ion-col size="2" style="height: 200px; margin: 0 1px; background-image: url(./assets/images/cosmetic-1.jpeg); background-size: cover; background-repeat: no-repeat;" offset="1">
 
@@ -34,81 +35,48 @@
       </ion-col>
       </ion-row>
 
-      <!-- <ion-row style="height: auto; margin-top: 70px; background: linear-gradient(to bottom, #F0EFEA, #fff); padding-top: 30px;">
-       
-        <ion-col size="5" offset="1" style="padding: 0;">
+      <ion-row class="h-auto margin-v-70" style="background: linear-gradient(to bottom, #F0EFEA, #fff); padding-top: 30px;">
+        <ion-col size="5" offset="1"  class="margin-v-70">
+          <span class="f-size-32">{{ 'beauty_section_two_title' | translate }}</span>
+          <p class="f-size-16 f-family-roboto l-height">
+            {{ 'beauty_section_two_descrption' | translate }}
+          </p>
+        </ion-col>
+
+        <ion-col size="4" offset="1" style="padding: 0;">
           <ion-card>
-            <ion-card-header class="bg-dark padding-30">
+            <ion-card-header class="bg-green padding-30">
               <ion-card-title color="light" class="f-size-24 text-uppercase">
                 {{ 'uses' | translate}}
               </ion-card-title>
               <ion-card-subtitle color="light" class="f-size-18">
-                {{ 'uses_subtitle' | translate }}
+                {{ 'beauty_uses_subtitle' | translate }}
               </ion-card-subtitle>
             </ion-card-header>
             <ion-card-content style="min-height: 300px;">
               <ul>
                 <li class="text-black f-size-16 padding-v-10">
-                  Pitture murarie, in particolare per uso indoor
+                  {{ 'beauty_box_label_one' | translate }}
                 </li>
                 <li class="text-black f-size-16 padding-v-10">
-                  Vernici e rivestimenti per legno
+                  {{ 'beauty_box_label_two' | translate }}
                 </li>
                 <li class="text-black f-size-16 padding-v-10">
-                  Pitture e tempere, molto adatte per bambini
+                  {{ 'beauty_box_label_three' | translate }}
                 </li>
                 <li class="text-black f-size-16 padding-v-10">
-                  Vernici per giocattoli
-                </li>
-                <li class="text-black f-size-16 padding-v-10">
-                  Pitture decorative da usare sulla pelle o a contatto con essa
-                </li>
-                <li class="text-black f-size-16 padding-v-10">
-                  Spray vernicianti atossici
+                  {{ 'beauty_box_label_four' | translate }}
                 </li>
               </ul>
             </ion-card-content>
           </ion-card>
         </ion-col>
-        <ion-col size="5" style="padding: 0;">
-          <ion-card>
-            <ion-card-header class="bg-green padding-30">
-              <ion-card-title color="light" class="f-size-24 text-uppercase">
-                {{ 'material' | translate}}
-              </ion-card-title>
-              <ion-card-subtitle color="light" class="f-size-18">
-                {{ 'material_subtitle' | translate }}
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content style="min-height: 300px;">
-              <ul>
-                <li class="text-black f-size-16 padding-v-10">
-                  Legno
-                </li>
-                <li class="text-black f-size-16 padding-v-10">
-                  Carta e cartone
-                </li>
-                <li class="text-black f-size-16 padding-v-10">
-                  Muratura e cartongesso
-                </li>
-                <li class="text-black f-size-16 padding-v-10">
-                  Cotone
-                </li>
-                <li class="text-black f-size-16 padding-v-10">
-                  Terracotta e ceramica porosa
-                </li>
-              </ul>
-            </ion-card-content>
-          </ion-card>
-        </ion-col> 
 
-         <ion-col size="10" offset="1" style="margin: 70px 0;">
-          <span class="f-size-32">{{ 'properties' | translate }}</span>
-          <p class="f-size-16 f-family-roboto l-height">
-            Grandi benefici si possono ottenere grazie alla giusta selezione degli ingredienti base, del giusto grado di viscosità raggiunta e dell’interazione studiata con gli altri componenti della formulazione.
-Queste resine alternative sono ideali per ridurre al minimo o addirittura <strong>prevenire l’uso di VOC</strong>. Sono resine del tutto <strong>atossiche</strong>, che non richiedono alcun tipo particolare di precauzione per essere maneggiate. Perciò sono adatte all’uso in posti chiusi, poco areati o su oggetti e arredamenti che verranno collocati nelle medesime aree.
-Molti dei polimeri di base usati sono <strong>edibili</strong> e <strong>dermocompatibili</strong>, quindi assolutamente adatti ad essere impiegati in prodotti che vengono a contatto con utilizzatori vulnerabili, sensibili a certe sostanze o per esigenze particolari come ad esempio l’uso a contatto con la pelle.  
-Queste resine sono inoltre <strong>naturalmente ritardanti di fiamma</strong>, il che le rende eccellenti anche senza l’impiego di additivi specifici.        
-          </p>
-        </ion-col>
-      </ion-row> -->
+     
+      </ion-row>
+
+} 
+
+@if (isMobile) {
+  <app-beauty-mobile></app-beauty-mobile>
+}

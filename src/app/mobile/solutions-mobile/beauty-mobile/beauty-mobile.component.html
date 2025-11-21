@@ -1,0 +1,94 @@
+      <ion-row class="h-auto margin-top-70">
+      <ion-col size="10" offset="1" style="padding: 10px; position: relative;">
+        <div>
+          <p style="font-size: 12px; font-family: RobotoBold, sans-serif; text-transform: uppercase;">{{ 'our_approach' | translate}}</p>
+        </div>   
+        <div> 
+          <div style="width: 100%">
+            <p class="f-size-32">
+              <span style="color: #1C8B81;">{{ 'beauty_section_one_title_one' | translate }}</span> {{ 'beauty_section_one_title_two' | translate }}
+            </p>
+          </div>
+          <div style="width: 100%">
+            <div style="width: 150px; height: 100%; position: absolute; top: 0; right: 0; background-color: #D5F5F1; z-index: -1;"></div>
+            <p style="font-size: 14px; margin-top: 70px; font-family: RobotoCustom, sans-serif; line-height: 1.5;">
+              {{ 'beauty_section_one_description' | translate }}
+            </p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+ <ion-row class="h-auto margin-top-70">
+          <ion-col size="12">
+<div #mainSplide class="splide" role="group" aria-label="Autoplaying Content Carousel" style="width: 100%;" data-splide='{
+    "perPage": 1,
+    "focus": "center",
+    "gap": "4rem",
+    "arrows": false,
+    "start": 2,
+    "resetOnDrag": true,
+    "pagination": false
+}'>
+  <div class="splide__track">
+    <ul class="splide__list" style="height: 200px;">
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/cosmetic-1.jpeg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/cosmetic-4.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/pink-color-2.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/cosmetic-3.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+      <li class="splide__slide">
+        <div style="height: 200px; margin: 0 1px; background-image: url(./assets/images/cosmetic-2.jpg); background-size: cover; background-repeat: no-repeat;" offset="1"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+          </ion-col>
+      </ion-row>
+
+      <ion-row style="height: auto; margin-top: 70px; background: linear-gradient(to bottom, #F0EFEA, #fff); padding-top: 30px;">
+       
+        <ion-col size="12" style="padding: 0;">
+          <ion-card>
+            <ion-card-header class="bg-green padding-30">
+              <ion-card-title color="light" class="f-size-24 text-uppercase">
+                {{ 'uses' | translate}}
+              </ion-card-title>
+              <ion-card-subtitle color="light" class="f-size-18">
+                {{ 'beauty_uses_subtitle' | translate }}
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content style="min-height: 300px;">
+              <ul>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'beauty_box_label_one' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'beauty_box_label_two' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'beauty_box_label_three' | translate }}
+                </li>
+                <li class="text-black f-size-14 padding-v-10">
+                  {{ 'beauty_box_label_four' | translate }}
+                </li>
+              </ul>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+      <ion-col size="10" offset="1" class="margin-v-70">
+          <span class="f-size-32">{{ 'beauty_section_two_title' | translate }}</span>
+          <p class="f-size-14 f-family-roboto l-height">
+            {{ 'beauty_section_two_descrption' | translate }}
+          </p>
+        </ion-col>
+      </ion-row>
